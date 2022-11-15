@@ -1,0 +1,12 @@
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\bin\Debug\net5.0\NovEShop.Share.deps.json
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\bin\Debug\net5.0\NovEShop.Share.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\bin\Debug\net5.0\ref\NovEShop.Share.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\bin\Debug\net5.0\NovEShop.Share.pdb
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.csproj.AssemblyReference.cache
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.GeneratedMSBuildEditorConfig.editorconfig
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.AssemblyInfoInputs.cache
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.AssemblyInfo.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.csproj.CoreCompileInputs.cache
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\obj\Debug\net5.0\ref\NovEShop.Share.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.pdb
