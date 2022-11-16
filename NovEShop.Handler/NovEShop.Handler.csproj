@@ -4,4 +4,17 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Categories\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NovEShop.Data\NovEShop.Data.csproj" />
+    <ProjectReference Include="..\NovEShop.Share\NovEShop.Share.csproj" />
+  </ItemGroup>
+
 </Project>

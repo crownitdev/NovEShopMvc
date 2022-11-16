@@ -1,15 +1,15 @@
-﻿using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Infrastructure;
-using EcommerceWebApp.Handler.Pagination.Dtos;
-using EcommerceWebApp.Handler.Products.Dtos;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using NovEShop.Data;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Handler.Paginations.Dtos;
+using NovEShop.Handler.Products.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Products.Queries
+namespace NovEShop.Handler.Products.Queries
 {
     public class GetProductsByNameQuery : IQuery<GetProductsByNameQueryResponse>
     {
@@ -20,9 +20,9 @@ namespace EcommerceWebApp.Handler.Products.Queries
 
     public class GetProductsByNameQueryHandler : IQueryHandler<GetProductsByNameQuery, GetProductsByNameQueryResponse>
     {
-        private readonly EcommerceAppDbContext _db;
+        private readonly NovEShopDbContext _db;
 
-        public GetProductsByNameQueryHandler(EcommerceAppDbContext db)
+        public GetProductsByNameQueryHandler(NovEShopDbContext db)
         {
             _db = db;
         }
@@ -54,7 +54,7 @@ namespace EcommerceWebApp.Handler.Products.Queries
                     SeoTitle = x.pt.SeoTitle,
                     Stock = x.p.Stock,
                     ViewCount = x.p.ViewCount,
-                    DateCreated = x.p.DateCreated,
+                    DateCreated = x.p.CreatedAt,
                     Price = x.p.Price,
                     OriginalPrice = x.p.OriginalPrice,
                     LanguageId = x.pt.LanguageId

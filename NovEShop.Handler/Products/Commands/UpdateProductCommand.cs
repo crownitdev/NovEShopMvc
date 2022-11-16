@@ -1,13 +1,13 @@
-﻿using EcommerceWebApp.Core.Exceptions.Products;
-using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Commons.Dtos;
-using EcommerceWebApp.Handler.Infrastructure;
-using EcommerceWebApp.Handler.Products.Dtos;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using NovEShop.Data;
+using NovEShop.Handler.Commons;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Handler.Products.Dtos;
+using NovEShop.Share.Exceptions.Products;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Products.Commands
+namespace NovEShop.Handler.Products.Commands
 {
     public class UpdateProductCommand : ProductUpdateRequest ,ICommand<UpdateProductCommandResponse>
     {
@@ -15,9 +15,9 @@ namespace EcommerceWebApp.Handler.Products.Commands
 
     public class UpdateProductCommandHandler : ICommandHandler<UpdateProductCommand, UpdateProductCommandResponse>
     {
-        private readonly EcommerceAppDbContext _db;
+        private readonly NovEShopDbContext _db;
 
-        public UpdateProductCommandHandler(EcommerceAppDbContext db)
+        public UpdateProductCommandHandler(NovEShopDbContext db)
         {
             _db = db;
         }

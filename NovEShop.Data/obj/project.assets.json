@@ -1669,7 +1669,10 @@
         },
         "runtime": {
           "bin/placeholder/NovEShop.Share.dll": {}
-        }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },

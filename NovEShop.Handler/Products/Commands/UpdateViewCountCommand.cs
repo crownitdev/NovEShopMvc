@@ -1,14 +1,10 @@
-﻿using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Infrastructure;
-using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using MediatR;
+using NovEShop.Data;
+using NovEShop.Handler.Infrastructure;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Products.Commands
+namespace NovEShop.Handler.Products.Commands
 {
     public class UpdateViewCountCommand : ICommand
     {
@@ -17,9 +13,9 @@ namespace EcommerceWebApp.Handler.Products.Commands
 
     public class UpdateViewCountCommandHandler : ICommandHandler<UpdateViewCountCommand>
     {
-        private readonly EcommerceAppDbContext _db;
+        private readonly NovEShopDbContext _db;
 
-        public UpdateViewCountCommandHandler(EcommerceAppDbContext db)
+        public UpdateViewCountCommandHandler(NovEShopDbContext db)
         {
             _db = db;
         }

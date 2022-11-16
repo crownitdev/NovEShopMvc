@@ -1,13 +1,13 @@
-﻿using EcommerceWebApp.Data;
-using EcommerceWebApp.Data.Models;
-using EcommerceWebApp.Handler.Categories.Dtos;
-using EcommerceWebApp.Handler.Commons.Dtos;
-using EcommerceWebApp.Handler.Infrastructure;
+﻿using NovEShop.Data;
+using NovEShop.Data.Models;
+using NovEShop.Handler.Categories.Dtos;
+using NovEShop.Handler.Commons;
+using NovEShop.Handler.Infrastructure;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Categories.Commands
+namespace NovEShop.Handler.Categories.Commands
 {
     public class CreateCategoryCommand : CreateCategoryRequest, ICommand<CreateCategoryCommandResponse>
     {
@@ -15,10 +15,10 @@ namespace EcommerceWebApp.Handler.Categories.Commands
 
     public class CreateCategoryCommandHandler : ICommandHandler<CreateCategoryCommand, CreateCategoryCommandResponse>
     {
-        private readonly EcommerceAppDbContext _db;
+        private readonly NovEShopDbContext _db;
 
         public CreateCategoryCommandHandler(
-            EcommerceAppDbContext db)
+            NovEShopDbContext db)
         {
             _db = db;
         }

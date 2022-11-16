@@ -1,15 +1,15 @@
-﻿using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Infrastructure;
-using EcommerceWebApp.Handler.Pagination.Dtos;
-using EcommerceWebApp.Handler.Products.Dtos;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Data;
+using NovEShop.Handler.Paginations.Dtos;
+using NovEShop.Handler.Products.Dtos;
 
-namespace EcommerceWebApp.Handler.Products.Queries
+namespace NovEShop.Handler.Products.Queries
 {
     public class GetAllProductPagingQuery : IQuery<GetAllProductPagingQueryResposne>
     {
@@ -19,10 +19,10 @@ namespace EcommerceWebApp.Handler.Products.Queries
 
     public class GetAllProductPagingQueryHandler : IQueryHandler<GetAllProductPagingQuery, GetAllProductPagingQueryResposne>
     {
-        private readonly EcommerceAppDbContext _dbContext;
+        private readonly NovEShopDbContext _dbContext;
 
         public GetAllProductPagingQueryHandler(
-            EcommerceAppDbContext dbContext)
+            NovEShopDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -51,7 +51,7 @@ namespace EcommerceWebApp.Handler.Products.Queries
                     SeoTitle = x.pt.SeoTitle,
                     Stock = x.p.Stock,
                     ViewCount = x.p.ViewCount,
-                    DateCreated = x.p.DateCreated,
+                    DateCreated = x.p.CreatedAt,
                     LanguageId = x.pt.LanguageId
                 })
                 .ToListAsync();

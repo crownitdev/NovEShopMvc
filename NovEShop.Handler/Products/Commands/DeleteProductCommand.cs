@@ -1,11 +1,12 @@
-﻿using EcommerceWebApp.Core.Exceptions.Products;
-using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Infrastructure;
+﻿using NovEShop.Data;
+using NovEShop.Handler.Commons;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Share.Exceptions.Products;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Products.Commands
+namespace NovEShop.Handler.Products.Commands
 {
     public class DeleteProductCommand : ICommand<DeleteProductCommandResponse>
     {
@@ -14,9 +15,9 @@ namespace EcommerceWebApp.Handler.Products.Commands
 
     public class DeleteProductCommandHandler : ICommandHandler<DeleteProductCommand, DeleteProductCommandResponse>
     {
-        private readonly EcommerceAppDbContext _db;
+        private readonly NovEShopDbContext _db;
 
-        public DeleteProductCommandHandler(EcommerceAppDbContext db)
+        public DeleteProductCommandHandler(NovEShopDbContext db)
         {
             _db = db;
         }
@@ -49,10 +50,7 @@ namespace EcommerceWebApp.Handler.Products.Commands
         }
     }
 
-    public class DeleteProductCommandResponse
+    public class DeleteProductCommandResponse : Response
     {
-        public string Message { get; set; }
-        public List<string> Errors { get; set; }
-        public bool IsSucceed { get; set; }
     }
 }

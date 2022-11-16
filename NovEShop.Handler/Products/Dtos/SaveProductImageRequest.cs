@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace EcommerceWebApp.Handler.Products.Dtos
+namespace NovEShop.Handler.Products.Dtos
 {
     public class SaveProductImageRequest
     {

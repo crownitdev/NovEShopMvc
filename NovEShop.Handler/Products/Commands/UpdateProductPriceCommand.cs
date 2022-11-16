@@ -1,10 +1,10 @@
-﻿using EcommerceWebApp.Core.Exceptions.Products;
-using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Infrastructure;
+﻿using NovEShop.Data;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Share.Exceptions.Products;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Products.Commands
+namespace NovEShop.Handler.Products.Commands
 {
     public class UpdateProductPriceCommand : ICommand<bool>
     {
@@ -14,9 +14,9 @@ namespace EcommerceWebApp.Handler.Products.Commands
 
     public class UpdateProductPriceCommandHandler : ICommandHandler<UpdateProductPriceCommand, bool>
     {
-        private readonly EcommerceAppDbContext _dbContext;
+        private readonly NovEShopDbContext _dbContext;
 
-        public UpdateProductPriceCommandHandler(EcommerceAppDbContext dbContext)
+        public UpdateProductPriceCommandHandler(NovEShopDbContext dbContext)
         {
             _dbContext = dbContext;
         }

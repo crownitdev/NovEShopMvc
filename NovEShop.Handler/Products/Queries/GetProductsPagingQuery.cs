@@ -1,16 +1,14 @@
-﻿using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Infrastructure;
-using EcommerceWebApp.Handler.Pagination.Dtos;
-using EcommerceWebApp.Handler.Products.Dtos;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using Microsoft.EntityFrameworkCore;
+using NovEShop.Data;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Handler.Paginations.Dtos;
+using NovEShop.Handler.Products.Dtos;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Products.Queries
+namespace NovEShop.Handler.Products.Queries
 {
     public class GetProductsPagingQuery : PaginationFilter, IQuery<GetProductsPagingQueryResponse>
     {
@@ -20,9 +18,9 @@ namespace EcommerceWebApp.Handler.Products.Queries
 
     public class GetProductsPagingQueryHandler : IQueryHandler<GetProductsPagingQuery, GetProductsPagingQueryResponse>
     {
-        private readonly EcommerceAppDbContext _db;
+        private readonly NovEShopDbContext _db;
 
-        public GetProductsPagingQueryHandler(EcommerceAppDbContext db)
+        public GetProductsPagingQueryHandler(NovEShopDbContext db)
         {
             _db = db;
         }
@@ -56,7 +54,7 @@ namespace EcommerceWebApp.Handler.Products.Queries
                 {
                     Id = x.p.Id,
                     Name = x.pt.Name,
-                    DateCreated = x.p.DateCreated,
+                    DateCreated = x.p.CreatedAt,
                     Description = x.pt.Description,
                     Details = x.pt.Details,
                     LanguageId = x.pt.LanguageId,
