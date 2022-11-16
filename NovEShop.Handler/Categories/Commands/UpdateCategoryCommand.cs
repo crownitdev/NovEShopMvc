@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Categories.Commands
+namespace NovEShop.Handler.Categories.Commands
 {
     class UpdateCategoryCommand
     {

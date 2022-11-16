@@ -1,4 +1,8 @@
-﻿using System;
+﻿using NovEShop.Data;
+using NovEShop.Data.Models;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Handler.Products.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,9 +16,9 @@ namespace NovEShop.Handler.Products.Commands
 
     public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductCommandResult>
     {
-        private readonly EcommerceAppDbContext _dbContext;
+        private readonly NovEShopDbContext _dbContext;
 
-        public CreateProductCommandHandler(EcommerceAppDbContext dbContext)
+        public CreateProductCommandHandler(NovEShopDbContext dbContext)
         {
             _dbContext = dbContext;
         }
@@ -38,7 +42,7 @@ namespace NovEShop.Handler.Products.Commands
                 OriginalPrice = request.OriginalPrice,
                 Stock = request.Stock,
                 ViewCount = 0,
-                DateCreated = DateTime.Now,
+                CreatedAt = DateTime.Now,
                 ProductTranslations = new List<ProductTranslation>()
                 {
                     new ProductTranslation()

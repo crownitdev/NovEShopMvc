@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EcommerceWebApp.Handler.Categories.Dtos
+namespace NovEShop.Handler.Categories.Dtos
 {
     public class CreateCategoryRequest
     {

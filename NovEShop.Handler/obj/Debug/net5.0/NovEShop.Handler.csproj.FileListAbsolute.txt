@@ -1,0 +1,5 @@
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.csproj.AssemblyReference.cache
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.GeneratedMSBuildEditorConfig.editorconfig
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.AssemblyInfoInputs.cache
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.AssemblyInfo.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.csproj.CoreCompileInputs.cache

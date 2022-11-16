@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Categories.Dtos
+namespace NovEShop.Handler.Categories.Dtos
 {
     class UpdateCategoryRequest
     {

@@ -1,14 +1,11 @@
-﻿using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Commons.Dtos;
-using EcommerceWebApp.Handler.Infrastructure;
-using System;
+﻿using NovEShop.Data;
+using NovEShop.Handler.Commons;
+using NovEShop.Handler.Infrastructure;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Categories.Commands
+namespace NovEShop.Handler.Categories.Commands
 {
     public class DisableCategoryCommand : ICommand<DisableCategoryCommandResponse>
     {
@@ -17,10 +14,10 @@ namespace EcommerceWebApp.Handler.Categories.Commands
 
     public class DisableCategoryCommandHandler : ICommandHandler<DisableCategoryCommand, DisableCategoryCommandResponse>
     {
-        private readonly EcommerceAppDbContext _db;
+        private readonly NovEShopDbContext _db;
 
         public DisableCategoryCommandHandler(
-            EcommerceAppDbContext db)
+            NovEShopDbContext db)
         {
             _db = db;
         }

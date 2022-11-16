@@ -1,4 +1,4 @@
-﻿namespace EcommerceWebApp.Handler.Products.Dtos
+﻿namespace NovEShop.Handler.Products.Dtos
 {
     public class ProductUpdateRequest
     {

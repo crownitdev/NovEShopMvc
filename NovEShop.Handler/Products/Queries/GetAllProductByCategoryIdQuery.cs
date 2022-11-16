@@ -1,14 +1,14 @@
-﻿using EcommerceWebApp.Data;
-using EcommerceWebApp.Handler.Infrastructure;
-using EcommerceWebApp.Handler.Pagination.Dtos;
-using EcommerceWebApp.Handler.Products.Dtos;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using NovEShop.Data;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Handler.Paginations.Dtos;
+using NovEShop.Handler.Products.Dtos;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace EcommerceWebApp.Handler.Products.Queries
+namespace NovEShop.Handler.Products.Queries
 {
     public class GetAllProductByCategoryIdQuery : IQuery<GetAllProductByCategoryIdQueryResponse>
     {
@@ -19,9 +19,9 @@ namespace EcommerceWebApp.Handler.Products.Queries
 
     public class GetAllProductByCategoryIdQueryHandler : IQueryHandler<GetAllProductByCategoryIdQuery, GetAllProductByCategoryIdQueryResponse>
     {
-        private readonly EcommerceAppDbContext _db;
+        private readonly NovEShopDbContext _db;
 
-        public GetAllProductByCategoryIdQueryHandler(EcommerceAppDbContext db)
+        public GetAllProductByCategoryIdQueryHandler(NovEShopDbContext db)
         {
             _db = db;
         }
