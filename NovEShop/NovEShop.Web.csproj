@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.17" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.17" />
@@ -17,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NovEShop.Data\NovEShop.Data.csproj" />
+    <ProjectReference Include="..\NovEShop.Handler\NovEShop.Handler.csproj" />
   </ItemGroup>
 
 </Project>

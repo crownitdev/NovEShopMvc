@@ -97,7 +97,6 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
@@ -369,7 +368,6 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.AssemblyInfoInputs.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.AssemblyInfo.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.csproj.CoreCompileInputs.cache
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.MvcApplicationPartsAssemblyInfo.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.MvcApplicationPartsAssemblyInfo.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.RazorAssemblyInfo.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.RazorAssemblyInfo.cs
@@ -396,3 +394,13 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\ref\NovEShop.Web.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.pdb
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.genruntimeconfig.cache
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.Contracts.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Handler.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Handler.pdb
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Header.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Slider.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.MvcApplicationPartsAssemblyInfo.cs
