@@ -59,7 +59,7 @@ namespace NovEShop.Data.Helpers
         {
             var user = new ApplicationUser()
             {
-                UserName = "admin",
+                UserName = username,
                 FirstName = firstName,
                 LastName = lastName,
                 NormalizedUserName = email.ToUpper(),

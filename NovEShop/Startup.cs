@@ -1,14 +1,18 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using NovEShop.Data;
 using NovEShop.Data.Models.Commons;
+using NovEShop.Handler.Infrastructure;
+using NovEShop.Share.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +47,23 @@ namespace NovEShop
 
                 options.User.RequireUniqueEmail = true;
             })
-                .AddEntityFrameworkStores<NovEShopDbContext>();
+                .AddEntityFrameworkStores<NovEShopDbContext>()
+                .AddDefaultTokenProviders();
+
+            //services.AddAuthentication()
+            //    .AddCookie("Cookie", authConfig =>
+            //    {
+            //        authConfig.LoginPath = "/Accounts/Login";
+            //        authConfig.Cookie.Name = "Cookie";
+            //        authConfig.SlidingExpiration = true;
+            //        authConfig.ExpireTimeSpan = TimeSpan.FromMinutes(30d);
+            //    });
+
+            services.AddMediatR(typeof(IBroker).Assembly);
+
+            services.AddSingleton<IEmailSender, EmailSender>();
+            services.AddTransient<IBroker, Broker>();
+
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }

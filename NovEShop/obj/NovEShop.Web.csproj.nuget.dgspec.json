@@ -96,6 +96,77 @@
         }
       }
     },
+    "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj",
+        "projectName": "NovEShop.Handler",
+        "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj",
+        "packagesPath": "C:\\Users\\catpi\\.nuget\\packages\\",
+        "outputPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\catpi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\NovEShop.Data.csproj": {
+                "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\NovEShop.Data.csproj"
+              },
+              "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj": {
+                "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -135,6 +206,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -187,6 +264,9 @@
             "projectReferences": {
               "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\NovEShop.Data.csproj": {
                 "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\NovEShop.Data.csproj"
+              },
+              "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj": {
+                "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj"
               }
             }
           }
@@ -201,6 +281,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.17, )"

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NovEShop.Data", "NovEShop.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NovEShop.Share", "NovEShop.Share\NovEShop.Share.csproj", "{C943BDFD-5AE7-4829-B248-A04B9F9A24D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NovEShop.Handler", "NovEShop.Handler\NovEShop.Handler.csproj", "{947FA2B3-1084-4836-99BD-0CE3C50856D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NovEShop.Handler", "NovEShop.Handler\NovEShop.Handler.csproj", "{947FA2B3-1084-4836-99BD-0CE3C50856D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
