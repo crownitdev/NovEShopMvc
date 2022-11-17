@@ -32,6 +32,7 @@ namespace NovEShop.Data
             builder.ApplyConfiguration<ProductCategories>(new ProductCategoriesConfiguration());
             builder.ApplyConfiguration<Promotion>(new PromotionConfiguration());
             builder.ApplyConfiguration<Transaction>(new TransactionConfiguration());
+            builder.ApplyConfiguration<ProductImage>(new ProductImageConfiguration());
 
             #region Configuration for Identity
             builder.ApplyConfiguration<ApplicationUser>(new ApplicationUserConfiguration());
@@ -58,5 +59,6 @@ namespace NovEShop.Data
         public DbSet<ProductCategories> ProductCategories { get; set; }
         public DbSet<Promotion> Promotions { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
     }
 }
