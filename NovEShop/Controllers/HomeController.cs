@@ -3,11 +3,7 @@ using Microsoft.Extensions.Logging;
 using NovEShop.Handler.Infrastructure;
 using NovEShop.Handler.Products.Queries;
 using NovEShop.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace NovEShop.Controllers
 {
