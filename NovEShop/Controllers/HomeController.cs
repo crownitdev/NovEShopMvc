@@ -24,7 +24,13 @@ namespace NovEShop.Controllers
             //var response = _broker.Query(new GetProductsHomePageQuery());
             return View();
         }
-
+        public IActionResult Contact()
+        {
+            return View();
+        }public IActionResult About()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
