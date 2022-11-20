@@ -22,6 +22,27 @@ namespace NovEShop.Controllers
         public IActionResult Index()
         {
             //var response = _broker.Query(new GetProductsHomePageQuery());
+            var bestSellerProducts = _broker.Query(new GetProductMetasByCategoryNameQuery() 
+            {
+                CategoryName = "Bán chạy",
+                PageNumber = 1,
+                PageSize = 8
+            });
+
+            var newArrivalProducts = _broker.Query(new GetProductMetasByCategoryNameQuery()
+            {
+                CategoryName = "Sản phẩm mới",
+                PageNumber = 1,
+                PageSize = 8
+            });
+
+            var saleProducts = _broker.Query(new GetProductMetasByCategoryNameQuery()
+            {
+                CategoryName = "Khuyến mãi",
+                PageNumber = 1,
+                PageSize = 8
+            });
+
             return View();
         }
 
