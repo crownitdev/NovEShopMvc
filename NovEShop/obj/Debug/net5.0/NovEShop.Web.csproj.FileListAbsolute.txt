@@ -404,3 +404,4 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.MvcApplicationPartsAssemblyInfo.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Product\Search.cshtml.g.cs
