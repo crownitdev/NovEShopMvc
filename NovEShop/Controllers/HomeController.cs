@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NovEShop.Handler.Commons;
 using NovEShop.Handler.Infrastructure;
 using NovEShop.Handler.Products.Queries;
 using NovEShop.Models;
 using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace NovEShop.Controllers
 {
@@ -19,31 +21,38 @@ namespace NovEShop.Controllers
             _broker = broker;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             //var response = _broker.Query(new GetProductsHomePageQuery());
-            var bestSellerProducts = _broker.Query(new GetProductMetasByCategoryNameQuery() 
+            var bestSellerProducts = await _broker.Query(new GetProductMetasByCategoryNameQuery() 
             {
                 CategoryName = "Bán chạy",
                 PageNumber = 1,
                 PageSize = 8
             });
 
-            var newArrivalProducts = _broker.Query(new GetProductMetasByCategoryNameQuery()
+            var newArrivalProducts = await _broker.Query(new GetProductMetasByCategoryNameQuery()
             {
                 CategoryName = "Sản phẩm mới",
                 PageNumber = 1,
                 PageSize = 8
             });
 
-            var saleProducts = _broker.Query(new GetProductMetasByCategoryNameQuery()
+            var saleProducts = await _broker.Query(new GetProductMetasByCategoryNameQuery()
             {
                 CategoryName = "Khuyến mãi",
                 PageNumber = 1,
                 PageSize = 8
             });
 
-            return View();
+            var homeDataResponse = new HomeDataResponse()
+            {
+                NewArrivalProducts = newArrivalProducts,
+                BestSellerProducts = bestSellerProducts,
+                SaleProducts = saleProducts
+            };
+
+            return View(homeDataResponse);
         }
 
         public IActionResult Privacy()

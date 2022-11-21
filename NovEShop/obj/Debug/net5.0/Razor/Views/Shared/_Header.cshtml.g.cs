@@ -40,8 +40,15 @@ using NovEShop.Handler.Products.Queries;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 5 "E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\Views\_ViewImports.cshtml"
+using NovEShop.Handler.Commons;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"390d98b7b6b6b6fbed485034da02f7afec309c3a", @"/Views/Shared/_Header.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"628a0fe13e546eb15a01c5fb4ae1c06c28e5d48d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e8e518b51e4068c06b23ebd674c0ac0ab9035e43", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__Header : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("src", new global::Microsoft.AspNetCore.Html.HtmlString("~/assets/images/logo/logo.png"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -145,7 +152,7 @@ using NovEShop.Handler.Products.Queries;
                     <div class=""col-xl-2 col-6"">
                         <div class=""header-logo"">
                             <a href=""/Home"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "390d98b7b6b6b6fbed485034da02f7afec309c3a13454", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "390d98b7b6b6b6fbed485034da02f7afec309c3a13657", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -172,7 +179,7 @@ using NovEShop.Handler.Products.Queries;
                                 </li>
                                 <li class=""has-children position-static"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a15182", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a15385", async() => {
                 WriteLiteral("<span>Shop</span> <i class=\"fa fa-angle-down\"></i>");
             }
             );
@@ -252,7 +259,7 @@ using NovEShop.Handler.Products.Queries;
                                 </li>
 
                                 <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a21547", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a21750", async() => {
                 WriteLiteral(" <span>Blog</span>");
             }
             );
@@ -270,7 +277,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                                <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a22962", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a23165", async() => {
                 WriteLiteral(" <span>About</span>");
             }
             );
@@ -288,7 +295,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                                <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a24378", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a24581", async() => {
                 WriteLiteral(" <span>Contact</span>");
             }
             );
@@ -324,7 +331,7 @@ using NovEShop.Handler.Products.Queries;
                                 </a>
                                 <ul class=""dropdown-menu"" ");
             WriteLiteral("aria-labelledby=\"dropdownMenu2\">\r\n                                    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a26907", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a27110", async() => {
                 WriteLiteral("My Account");
             }
             );
@@ -344,7 +351,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                                    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a28486", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a28689", async() => {
                 WriteLiteral("Login");
             }
             );
@@ -364,7 +371,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                                    <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a30062", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a30265", async() => {
                 WriteLiteral("Register");
             }
             );
@@ -436,7 +443,7 @@ using NovEShop.Handler.Products.Queries;
                         </li>
                         <li class=""has-children"">
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a34014", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a34217", async() => {
                 WriteLiteral("Shop <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i>");
             }
             );
@@ -495,7 +502,7 @@ using NovEShop.Handler.Products.Queries;
                                 <li><a href=""404-error.html"">Error 404</a></li>
                          ");
             WriteLiteral("       <li><a href=\"my-account.html\">My Account</a></li>\r\n                                <li><a href=\"login-register.html\">Loging | Register</a></li>\r\n                            </ul>\r\n                        </li>\r\n                        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a38926", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a39129", async() => {
                 WriteLiteral(" <span>Blog</span>");
             }
             );
@@ -513,7 +520,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a40333", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a40536", async() => {
                 WriteLiteral("About");
             }
             );
@@ -531,7 +538,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                        <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a41727", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a41930", async() => {
                 WriteLiteral("Contact");
             }
             );
@@ -549,7 +556,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                        <li class=\"has-children\">\r\n                            <a href=\"#\">Account<i class=\"fa fa-angle-down\"></i></a>\r\n                            <ul class=\"dropdown\">\r\n                                <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a43332", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a43535", async() => {
                 WriteLiteral("My Account");
             }
             );
@@ -567,7 +574,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                                <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a44739", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a44942", async() => {
                 WriteLiteral("Login");
             }
             );
@@ -585,7 +592,7 @@ using NovEShop.Handler.Products.Queries;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("</li>\r\n                                <li>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a46143", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a46346", async() => {
                 WriteLiteral("Register");
             }
             );
@@ -671,7 +678,7 @@ using NovEShop.Handler.Products.Queries;
             <!-- Button Close End -->
             <!-- Offcanvas Search Form Start -->
             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a51048", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "390d98b7b6b6b6fbed485034da02f7afec309c3a51251", async() => {
                 WriteLiteral("\r\n                <input type=\"text\" placeholder=\"Search Product...\" class=\"offcanvas-search-input\">\r\n            ");
             }
             );
@@ -717,7 +724,7 @@ using NovEShop.Handler.Products.Queries;
                     <!-- Single Cart Product Start -->
                     <div class=""single-cart-product"">");
             WriteLiteral("\n                        <div class=\"cart-product-thumb\">\r\n                            <a href=\"single-product.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "390d98b7b6b6b6fbed485034da02f7afec309c3a53762", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "390d98b7b6b6b6fbed485034da02f7afec309c3a53965", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -755,7 +762,7 @@ using NovEShop.Handler.Products.Queries;
 
                     <!-- Single Cart Product Sta");
             WriteLiteral("rt -->\r\n                    <div class=\"single-cart-product\">\r\n                        <div class=\"cart-product-thumb\">\r\n                            <a href=\"single-product.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "390d98b7b6b6b6fbed485034da02f7afec309c3a56142", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "390d98b7b6b6b6fbed485034da02f7afec309c3a56345", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -793,7 +800,7 @@ using NovEShop.Handler.Products.Queries;
 
                     <!-- Single Cart Product Start ");
             WriteLiteral("-->\r\n                    <div class=\"single-cart-product\">\r\n                        <div class=\"cart-product-thumb\">\r\n                            <a href=\"single-product.html\">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "390d98b7b6b6b6fbed485034da02f7afec309c3a58519", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "390d98b7b6b6b6fbed485034da02f7afec309c3a58722", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

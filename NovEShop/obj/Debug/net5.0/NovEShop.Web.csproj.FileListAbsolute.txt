@@ -406,3 +406,4 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\ref\NovEShop.Web.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.pdb
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.genruntimeconfig.cache
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.csproj.AssemblyReference.cache
