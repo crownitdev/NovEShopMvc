@@ -59,6 +59,7 @@ namespace NovEShop
             //        authConfig.ExpireTimeSpan = TimeSpan.FromMinutes(30d);
             //    });
 
+            services.AddTransient<IFileStorageHelper, FileStorageHelper>();
             services.AddMediatR(typeof(IBroker).Assembly);
 
             services.AddSingleton<IEmailSender, EmailSender>();
