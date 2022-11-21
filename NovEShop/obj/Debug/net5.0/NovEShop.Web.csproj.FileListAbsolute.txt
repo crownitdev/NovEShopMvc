@@ -286,6 +286,9 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Web.Views.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Web.Views.pdb
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Humanizer.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.Contracts.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
@@ -305,6 +308,7 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
@@ -360,14 +364,16 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Data.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Handler.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Share.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Data.pdb
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Handler.pdb
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Share.pdb
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.csproj.AssemblyReference.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.GeneratedMSBuildEditorConfig.editorconfig
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.AssemblyInfoInputs.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.AssemblyInfo.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.csproj.CoreCompileInputs.cache
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.MvcApplicationPartsAssemblyInfo.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.MvcApplicationPartsAssemblyInfo.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.RazorAssemblyInfo.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.RazorAssemblyInfo.cs
@@ -378,11 +384,17 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.TagHelpers.output.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.RazorCoreGenerate.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Home\Contact.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Product\Search.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Header.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Slider.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
@@ -394,19 +406,3 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\ref\NovEShop.Web.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.pdb
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.genruntimeconfig.cache
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.dll
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.Contracts.dll
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Handler.dll
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\NovEShop.Handler.pdb
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Footer.cshtml.g.cs
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Header.cshtml.g.cs
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Shared\_Slider.cshtml.g.cs
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\NovEShop.Web.MvcApplicationPartsAssemblyInfo.cs
-<<<<<<< Updated upstream
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Product\Search.cshtml.g.cs
-=======
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Home\About.cshtml.g.cs
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\obj\Debug\net5.0\Razor\Views\Home\Contact.cshtml.g.cs
->>>>>>> Stashed changes
