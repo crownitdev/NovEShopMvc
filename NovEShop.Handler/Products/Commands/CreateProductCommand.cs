@@ -1,9 +1,13 @@
-﻿using NovEShop.Data;
+﻿using Microsoft.AspNetCore.Http;
+using NovEShop.Data;
 using NovEShop.Data.Models;
 using NovEShop.Handler.Infrastructure;
 using NovEShop.Handler.Products.Dtos;
+using NovEShop.Share.Helpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,10 +20,13 @@ namespace NovEShop.Handler.Products.Commands
 
     public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductCommandResult>
     {
+        private readonly IFileStorageHelper _fileStorageHelper;
         private readonly NovEShopDbContext _dbContext;
 
-        public CreateProductCommandHandler(NovEShopDbContext dbContext)
+        public CreateProductCommandHandler(NovEShopDbContext dbContext,
+            IFileStorageHelper fileStorageHelper)
         {
+            _fileStorageHelper = fileStorageHelper;
             _dbContext = dbContext;
         }
 
@@ -58,6 +65,22 @@ namespace NovEShop.Handler.Products.Commands
                 }
             };
 
+            if (request.ThumbnailImage != null)
+            {
+                product.ProductImages = new List<ProductImage>()
+                {
+                    new ProductImage()
+                    {
+                        Caption = $"{request.Name}.product_thumb.{DateTime.Now}",
+                        CreatedAt = DateTime.Now,
+                        FileSize = request.ThumbnailImage.Length,
+                        ImagePath = await this.SaveFile(request.ThumbnailImage),
+                        IsDefault = true,
+                        SortOrder = 1
+                    }
+                };
+            }
+
             _dbContext.Products.Add(product);
             await _dbContext.SaveChangesAsync();
 
@@ -65,6 +88,15 @@ namespace NovEShop.Handler.Products.Commands
             response.IsSucceed = true;
 
             return response;
+        }
+
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await _fileStorageHelper.SaveFileAsync(file.OpenReadStream(), fileName);
+
+            return fileName;
         }
     }
 

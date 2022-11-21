@@ -1,4 +1,6 @@
-﻿namespace NovEShop.Handler.Products.Dtos
+﻿using Microsoft.AspNetCore.Http;
+
+namespace NovEShop.Handler.Products.Dtos
 {
     public class ProductUpdateRequest
     {
@@ -10,5 +12,6 @@
         public string SeoTitle { get; set; }
         public string SeoAlias { get; set; }
         public string LanguageId { get; set; }
+        public IFormFile ThumbnailImage { get; set; }
     }
 }
