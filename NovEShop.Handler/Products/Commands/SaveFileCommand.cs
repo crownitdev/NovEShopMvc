@@ -23,67 +23,67 @@ namespace NovEShop.Handler.Products.Commands
         public IFormFile File { get; set; }
     }
 
-    //public class SaveFileCommandHandler : ICommandHandler<SaveFileCommand>
-    //{
-    //    private readonly NovEShopDbContext _db;
-    //    private readonly IFileStorageHelper _fileStoreHelper;
+    public class SaveFileCommandHandler : ICommandHandler<SaveFileCommand>
+    {
+        private readonly NovEShopDbContext _db;
+        private readonly IFileStorageHelper _fileStoreHelper;
 
-    //    public SaveFileCommandHandler(
-    //        NovEShopDbContext db,
-    //        IFileStorageHelper fileStoreHelper)
-    //    {
-    //        _db = db;
-    //        _fileStoreHelper = fileStoreHelper;
-    //    }
+        public SaveFileCommandHandler(
+            NovEShopDbContext db,
+            IFileStorageHelper fileStoreHelper)
+        {
+            _db = db;
+            _fileStoreHelper = fileStoreHelper;
+        }
 
-        //public async Task<Unit> Handle(SaveFileCommand request, CancellationToken cancellationToken)
-        //{
-        //    var product = await _db.Products.FindAsync(request.ProductId);
+        public async Task<Unit> Handle(SaveFileCommand request, CancellationToken cancellationToken)
+        {
+            var product = await _db.Products.FindAsync(request.ProductId);
 
-        //    if (product == null)
-        //    {
-        //        throw new ProductNotFoundException("Sản phẩm không tồn tại, không thể thêm hình ảnh");
-        //    }
-            
-        //    if (request.File != null)
-        //    {
-        //        // Images of the product is existed
-        //        var thumbnailImage = await _db.ProductImages.FirstOrDefaultAsync(x => x.IsDefault == true && x.ProductId == request.ProductId);
-        //        if (thumbnailImage != null)
-        //        {
-        //            thumbnailImage.FileSize = request.File.Length;
-        //            thumbnailImage.ImagePath = await this.SaveFile(request.File);
-        //            _db.ProductImages.Update(thumbnailImage);
-        //        }
-        //        else
-        //        {
-        //            product.ProductImages = new List<ProductImage>()
-        //            {
-        //                new ProductImage()
-        //                {
-        //                    Caption = "Thumbnail image",
-        //                    DateCreated = DateTime.Now,
-        //                    FileSize = request.File.Length,
-        //                    ImagePath = await this.SaveFile(request.File),
-        //                    IsDefault = true,
-        //                    SortOrder = 1,
-        //                }
-        //            };
-        //        }    
-        //    }
+            if (product == null)
+            {
+                throw new ProductNotFoundException("Sản phẩm không tồn tại, không thể thêm hình ảnh");
+            }
 
-        //    await _db.SaveChangesAsync();
+            if (request.File != null)
+            {
+                // Images of the product is existed
+                var thumbnailImage = await _db.ProductImages.FirstOrDefaultAsync(x => x.IsDefault == true && x.ProductId == request.ProductId);
+                if (thumbnailImage != null)
+                {
+                    thumbnailImage.FileSize = request.File.Length;
+                    thumbnailImage.ImagePath = await this.SaveFile(request.File);
+                    _db.ProductImages.Update(thumbnailImage);
+                }
+                else
+                {
+                    product.ProductImages = new List<ProductImage>()
+                    {
+                        new ProductImage()
+                        {
+                            Caption = "Thumbnail image",
+                            CreatedAt = DateTime.Now,
+                            FileSize = request.File.Length,
+                            ImagePath = await this.SaveFile(request.File),
+                            IsDefault = true,
+                            SortOrder = 1,
+                        }
+                    };
+                }
+            }
 
-        //    return Unit.Value;
-        //}
+            await _db.SaveChangesAsync();
 
-        //private async Task<string> SaveFile(IFormFile file)
-        //{
-        //    var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
-        //    var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
-        //    await _fileStoreHelper.SaveFileAsync(file.OpenReadStream(), fileName);
+            return Unit.Value;
+        }
 
-        //    return fileName;
-        //}
-    //}
+        private async Task<string> SaveFile(IFormFile file)
+        {
+            var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName;
+            var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
+            await _fileStoreHelper.SaveFileAsync(file.OpenReadStream(), fileName);
+
+            return fileName;
+        }
+    }
 }
