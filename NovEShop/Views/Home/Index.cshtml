@@ -1,4 +1,8 @@
-﻿ <!-- Hero/Intro Slider Start -->
+﻿@model HomeDataResponse
+@{
+
+}
+<!-- Hero/Intro Slider Start -->
 <div class="section">
     <div class="hero-slider">
         <div class="swiper-container">
@@ -209,12 +213,90 @@
                         <div class="product-carousel">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper mb-n10">
+                                    @{
+                                        int count = 0;
 
+                                        foreach (var product in Model.NewArrivalProducts.Data)
+                                        {
+                                            if (count == 0)
+                                            {
+                                                @Html.Raw("<div class=\"swiper - slide product - wrapper\">")
+                                                <!-- Single Product Start -->
+                                                <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="300">
+                                                    <div class="thumb">
+                                                        <a href="single-product.html" class="image">
+                                                            <img class="first-image" src="~/assets/images/products/medium-size/1.jpg" alt="Product" />
+                                                            <img class="second-image" src="~/assets/images/products/medium-size/5.jpg" alt="Product" />
+                                                        </a>
+                                                        <div class="actions">
+                                                            <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
+                                                            <a href="#" class="action quickview" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="pe-7s-search"></i></a>
+                                                            <a href="#" class="action compare"><i class="pe-7s-shuffle"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h4 class="sub-title"><a href="single-product.html">Studio Design</a></h4>
+                                                        <h5 class="title"><a href="/product/details?productid=@product.ProductId">@product.Name</a></h5>
+                                                        <span class="ratings">
+                                                            <span class="rating-wrap">
+                                                                <span class="star" style="width: 100%"></span>
+                                                            </span>
+                                                            <span class="rating-num">(4)</span>
+                                                        </span>
+                                                        <span class="price">
+                                                            <span class="new">@product.Price</span>
+                                                            <span class="old">@product.Price</span>
+                                                        </span>
+                                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
+                                                    </div>
+                                                </div>
+                                                <!-- Single Product End -->
+                                            }
+                                            else
+                                            {
+                                                <!-- Single Product Start -->
+                                                <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="400">
+                                                    <div class="thumb">
+                                                        <a href="single-product.html" class="image">
+                                                            <img class="first-image" src="~/assets/images/products/medium-size/2.jpg" alt="Product" />
+                                                            <img class="second-image" src="~/assets/images/products/medium-size/3.jpg" alt="Product" />
+                                                        </a>
+                                                        <div class="actions">
+                                                            <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
+                                                            <a href="#" class="action quickview" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="pe-7s-search"></i></a>
+                                                            <a href="#" class="action compare"><i class="pe-7s-shuffle"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h4 class="sub-title"><a href="single-product.html">Studio Design</a></h4>
+                                                        <h5 class="title"><a href="/product/details?productid=@product.ProductId">@product.Name</a></h5>
+                                                        <span class="ratings">
+                                                            <span class="rating-wrap">
+                                                                <span class="star" style="width: 100%"></span>
+                                                            </span>
+                                                            <span class="rating-num">(4)</span>
+                                                        </span>
+                                                        <span class="price">
+                                                            <span class="new">@product.Price</span>
+                                                            <span class="old">@product.Price</span>
+                                                        </span>
+                                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
+                                                    </div>
+                                                </div>
+                                                <!-- Single Product End -->
+                                                @Html.Raw("</div>")
+                                                count = 0;
+                                                continue;
+                                            }
+                                            count++;
+                                        }
+                                    }
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
+
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="300">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="300">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/1.jpg" alt="Product" />
@@ -241,10 +323,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="400">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="400">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/2.jpg" alt="Product" />
@@ -271,16 +353,16 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="400">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="400">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/4.jpg" alt="Product" />
@@ -310,10 +392,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="500">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="500">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/5.jpg" alt="Product" />
@@ -343,16 +425,16 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="500">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="500">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/7.jpg" alt="Product" />
@@ -378,10 +460,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="600">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="600">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/10.jpg" alt="Product" />
@@ -408,16 +490,16 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="600">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="600">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/11.jpg" alt="Product" />
@@ -444,10 +526,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="700">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="700">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/3.jpg" alt="Product" />
@@ -473,16 +555,16 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="700">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="700">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/7.jpg" alt="Product" />
@@ -508,10 +590,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="800">
+                                        <!--<div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="800">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/10.jpg" alt="Product" />
@@ -538,10 +620,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
 
                                 </div>
@@ -561,11 +643,89 @@
                             <div class="swiper-container">
                                 <div class="swiper-wrapper mb-n10">
 
+                                    @{
+                                        count = 0;
+
+                                        foreach (var product in Model.BestSellerProducts.Data)
+                                        {
+                                            if (count == 0)
+                                            {
+                                                @Html.Raw("<div class=\"swiper - slide product - wrapper\">")
+                                                <!-- Single Product Start -->
+                                                <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="300">
+                                                    <div class="thumb">
+                                                        <a href="single-product.html" class="image">
+                                                            <img class="first-image" src="~/assets/images/products/medium-size/1.jpg" alt="Product" />
+                                                            <img class="second-image" src="~/assets/images/products/medium-size/5.jpg" alt="Product" />
+                                                        </a>
+                                                        <div class="actions">
+                                                            <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
+                                                            <a href="#" class="action quickview" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="pe-7s-search"></i></a>
+                                                            <a href="#" class="action compare"><i class="pe-7s-shuffle"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h4 class="sub-title"><a href="single-product.html">Studio Design</a></h4>
+                                                        <h5 class="title"><a href="/product/details?productid=@product.ProductId">@product.Name</a></h5>
+                                                        <span class="ratings">
+                                                            <span class="rating-wrap">
+                                                                <span class="star" style="width: 100%"></span>
+                                                            </span>
+                                                            <span class="rating-num">(4)</span>
+                                                        </span>
+                                                        <span class="price">
+                                                            <span class="new">@product.Price</span>
+                                                            <span class="old">@product.Price</span>
+                                                        </span>
+                                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
+                                                    </div>
+                                                </div>
+                                                <!-- Single Product End -->
+                                            }
+                                            else
+                                            {
+                                                <!-- Single Product Start -->
+                                                <div class="product product-border-left mb-10" data-aos="fade-up" data-aos-delay="400">
+                                                    <div class="thumb">
+                                                        <a href="single-product.html" class="image">
+                                                            <img class="first-image" src="~/assets/images/products/medium-size/2.jpg" alt="Product" />
+                                                            <img class="second-image" src="~/assets/images/products/medium-size/3.jpg" alt="Product" />
+                                                        </a>
+                                                        <div class="actions">
+                                                            <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
+                                                            <a href="#" class="action quickview" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="pe-7s-search"></i></a>
+                                                            <a href="#" class="action compare"><i class="pe-7s-shuffle"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="content">
+                                                        <h4 class="sub-title"><a href="single-product.html">Studio Design</a></h4>
+                                                        <h5 class="title"><a href="/product/details?productid=@product.ProductId">@product.Name</a></h5>
+                                                        <span class="ratings">
+                                                            <span class="rating-wrap">
+                                                                <span class="star" style="width: 100%"></span>
+                                                            </span>
+                                                            <span class="rating-num">(4)</span>
+                                                        </span>
+                                                        <span class="price">
+                                                            <span class="new">@product.Price</span>
+                                                            <span class="old">@product.Price</span>
+                                                        </span>
+                                                        <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
+                                                    </div>
+                                                </div>
+                                                <!-- Single Product End -->
+                                                @Html.Raw("</div>")
+                                                count = 0;
+                                                continue;
+                                            }
+                                            count++;
+                                        }
+                                    }
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10">
+                                        <!--<div class="product product-border-left mb-10">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/2.jpg" alt="Product" />
@@ -592,10 +752,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10">
+                                        <!--<div class="product product-border-left mb-10">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/1.jpg" alt="Product" />
@@ -622,16 +782,16 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10">
+                                        <!--<div class="product product-border-left mb-10">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/11.jpg" alt="Product" />
@@ -658,10 +818,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10">
+                                        <!--<div class="product product-border-left mb-10">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/3.jpg" alt="Product" />
@@ -687,16 +847,16 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10">
+                                        <!--<div class="product product-border-left mb-10">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/4.jpg" alt="Product" />
@@ -726,10 +886,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10">
+                                        <!--<div class="product product-border-left mb-10">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/5.jpg" alt="Product" />
@@ -759,16 +919,16 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
                                     <!-- Product Start -->
-                                    <div class="swiper-slide product-wrapper">
+                                    <!--<div class="swiper-slide product-wrapper">-->
 
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10">
+                                        <!--<div class="product product-border-left mb-10">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/7.jpg" alt="Product" />
@@ -794,10 +954,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
                                         <!-- Single Product Start -->
-                                        <div class="product product-border-left mb-10">
+                                        <!--<div class="product product-border-left mb-10">
                                             <div class="thumb">
                                                 <a href="single-product.html" class="image">
                                                     <img class="first-image" src="~/assets/images/products/medium-size/10.jpg" alt="Product" />
@@ -824,10 +984,10 @@
                                                 </span>
                                                 <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
                                             </div>
-                                        </div>
+                                        </div>-->
                                         <!-- Single Product End -->
 
-                                    </div>
+                                    <!--</div>-->
                                     <!-- Product End -->
 
                                 </div>
