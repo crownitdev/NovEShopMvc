@@ -1,10 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using NovEShop.Data;
+﻿using NovEShop.Data;
 using NovEShop.Handler.Commons;
 using NovEShop.Handler.Infrastructure;
 using NovEShop.Share.Exceptions.Products;
 using NovEShop.Share.Helpers;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;

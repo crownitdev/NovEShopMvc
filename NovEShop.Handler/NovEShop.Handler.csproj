@@ -4,11 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <Folder Include="Accounts\Dtos\" />
     <Folder Include="Accounts\Queries\" />
     <Folder Include="Categories\Queries\" />
-  </ItemGroup>
+  </ItemGroup>-->
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="11.0.0" />

@@ -34,11 +34,16 @@ namespace NovEShop.Handler.Products.Commands
                 throw new ProductImageNotFoundException($"Không thể tìm thấy hình ảnh {request.ImageId}");
             }
 
+            var oldImagePath = productImage.ImagePath;
+
             if (request.ImageFile != null)
             {
                 productImage.ImagePath = await _fileStorageHelper.SaveFile(request.ImageFile);
                 productImage.FileSize = request.ImageFile.Length;
             }
+
+            // Removing old image
+            await _fileStorageHelper.DeleteFileAsync(_fileStorageHelper.GetFileName(oldImagePath));
 
             _db.ProductImages.Update(productImage);
             
