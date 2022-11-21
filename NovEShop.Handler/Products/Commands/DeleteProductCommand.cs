@@ -1,8 +1,11 @@
-﻿using NovEShop.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using NovEShop.Data;
 using NovEShop.Handler.Commons;
 using NovEShop.Handler.Infrastructure;
 using NovEShop.Share.Exceptions.Products;
+using NovEShop.Share.Helpers;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -16,10 +19,13 @@ namespace NovEShop.Handler.Products.Commands
     public class DeleteProductCommandHandler : ICommandHandler<DeleteProductCommand, DeleteProductCommandResponse>
     {
         private readonly NovEShopDbContext _db;
+        private readonly IFileStorageHelper _fileStorageHelper;
 
-        public DeleteProductCommandHandler(NovEShopDbContext db)
+        public DeleteProductCommandHandler(NovEShopDbContext db,
+            IFileStorageHelper fileStorageHelper)
         {
             _db = db;
+            _fileStorageHelper = fileStorageHelper;
         }
 
         public async Task<DeleteProductCommandResponse> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
@@ -32,6 +38,15 @@ namespace NovEShop.Handler.Products.Commands
                 throw new ProductNotFoundException($"Không tìm thấy sản phẩm: {request.ProductId}");
             }
 
+            // Delete its images
+            var images = _db.ProductImages.Where(i => i.ProductId == request.ProductId);
+
+            foreach (var image in images)
+            {
+                await _fileStorageHelper.DeleteFileAsync(image.ImagePath);
+            }
+
+            _db.ProductImages.RemoveRange(images.ToList());
             _db.Products.Remove(product);
             var result = await _db.SaveChangesAsync();
 

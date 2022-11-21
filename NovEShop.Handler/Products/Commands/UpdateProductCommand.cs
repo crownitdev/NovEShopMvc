@@ -1,25 +1,33 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NovEShop.Data;
+using NovEShop.Data.Models;
 using NovEShop.Handler.Commons;
 using NovEShop.Handler.Infrastructure;
 using NovEShop.Handler.Products.Dtos;
 using NovEShop.Share.Exceptions.Products;
+using NovEShop.Share.Helpers;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace NovEShop.Handler.Products.Commands
 {
-    public class UpdateProductCommand : ProductUpdateRequest ,ICommand<UpdateProductCommandResponse>
+    public class UpdateProductCommand : ProductUpdateRequest, ICommand<UpdateProductCommandResponse>
     {
     }
 
     public class UpdateProductCommandHandler : ICommandHandler<UpdateProductCommand, UpdateProductCommandResponse>
     {
         private readonly NovEShopDbContext _db;
+        private readonly IFileStorageHelper _fileStorageHelper;
 
-        public UpdateProductCommandHandler(NovEShopDbContext db)
+        public UpdateProductCommandHandler(NovEShopDbContext db,
+            IFileStorageHelper fileStorageHelper)
         {
             _db = db;
+            _fileStorageHelper = fileStorageHelper;
         }
 
         public async Task<UpdateProductCommandResponse> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
@@ -40,6 +48,18 @@ namespace NovEShop.Handler.Products.Commands
             productTranslation.SeoAlias = request.SeoAlias;
             productTranslation.Description = request.Description;
             productTranslation.Details = request.Details;
+
+            // Save Image
+
+            if (request.ThumbnailImage != null)
+            {
+                var thumbnailImage = await _db.ProductImages.FirstOrDefaultAsync(i => i.IsDefault == true && i.ProductId == request.Id);
+                if (thumbnailImage != null)
+                {
+                    thumbnailImage.FileSize = request.ThumbnailImage.Length;
+                    thumbnailImage.ImagePath = await _fileStorageHelper.SaveFile(request.ThumbnailImage);
+                }
+            }
 
             var saveChangeState = await _db.SaveChangesAsync();
 
