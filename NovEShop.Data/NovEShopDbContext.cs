@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using NovEShop.Data.Configurations;
+using NovEShop.Data.Helpers;
 using NovEShop.Data.Models;
 using NovEShop.Data.Models.Commons;
 
@@ -43,6 +44,10 @@ namespace NovEShop.Data
             builder.Entity<IdentityUserClaim<int>>().ToTable("UserClaims").HasKey(x => x.Id);
             builder.Entity<IdentityUserLogin<int>>().ToTable("UserLogins").HasKey(x => x.UserId);
             builder.Entity<IdentityUserToken<int>>().ToTable("UserTokens").HasKey(x => x.UserId);
+            #endregion
+
+            #region Seed Data
+            Seed.SeedSampleData(builder);
             #endregion
         }
 

@@ -12,10 +12,21 @@ namespace NovEShop.Web.Controllers
     {
         private readonly IBroker _broker;
 
+        public ProductController(IBroker broker)
+        {
+            _broker = broker;
+        }
+
         public IActionResult Index()
         {
             var response = _broker.Query(new GetAllProductPagingQuery());
             return View();
+        }
+
+        public async Task<IActionResult> Search(GetProductsByNameQuery request)
+        {
+            var response = await _broker.Query(request);
+            return View(response);
         }
     }
 }
