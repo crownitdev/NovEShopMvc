@@ -544,6 +544,46 @@ namespace NovEShop.Data.Migrations
                     b.ToTable("ProductCategories");
                 });
 
+            modelBuilder.Entity("NovEShop.Data.Models.ProductImage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Caption")
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long>("FileSize")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<bool>("IsDefault")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SortOrder")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductImages");
+                });
+
             modelBuilder.Entity("NovEShop.Data.Models.ProductTranslation", b =>
                 {
                     b.Property<int>("Id")
@@ -796,6 +836,17 @@ namespace NovEShop.Data.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("NovEShop.Data.Models.ProductImage", b =>
+                {
+                    b.HasOne("NovEShop.Data.Models.Product", "Product")
+                        .WithMany("ProductImages")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("NovEShop.Data.Models.ProductTranslation", b =>
                 {
                     b.HasOne("NovEShop.Data.Models.Language", "Language")
@@ -861,6 +912,8 @@ namespace NovEShop.Data.Migrations
                     b.Navigation("OrderDetails");
 
                     b.Navigation("ProductCategories");
+
+                    b.Navigation("ProductImages");
 
                     b.Navigation("ProductTranslations");
                 });

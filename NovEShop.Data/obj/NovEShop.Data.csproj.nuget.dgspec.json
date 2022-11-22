@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\NovEShop.Data.csproj": {}
+    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {}
   },
   "projects": {
-    "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\NovEShop.Data.csproj": {
+    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\NovEShop.Data.csproj",
+        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj",
         "projectName": "NovEShop.Data",
-        "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\NovEShop.Data.csproj",
-        "packagesPath": "C:\\Users\\catpi\\.nuget\\packages\\",
-        "outputPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Data\\obj\\",
+        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj",
+        "packagesPath": "C:\\Users\\ADMINIS\\.nuget\\packages\\",
+        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\catpi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ADMINIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,14 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj": {
-                "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj"
+              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj": {
+                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj"
               }
             }
           }
@@ -83,7 +84,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -92,25 +94,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj": {
+    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj",
+        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj",
         "projectName": "NovEShop.Share",
-        "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj",
-        "packagesPath": "C:\\Users\\catpi\\.nuget\\packages\\",
-        "outputPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\obj\\",
+        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj",
+        "packagesPath": "C:\\Users\\ADMINIS\\.nuget\\packages\\",
+        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
         ],
         "configFilePaths": [
-          "C:\\Users\\catpi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ADMINIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -118,6 +120,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -147,7 +150,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -159,7 +163,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -15,3 +15,20 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debu
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debug\net5.0\ref\NovEShop.Handler.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.pdb
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\bin\Debug\net5.0\NovEShop.Handler.deps.json
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\bin\Debug\net5.0\NovEShop.Handler.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\bin\Debug\net5.0\NovEShop.Handler.pdb
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\bin\Debug\net5.0\NovEShop.Data.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\bin\Debug\net5.0\NovEShop.Share.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\bin\Debug\net5.0\NovEShop.Data.pdb
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\bin\Debug\net5.0\NovEShop.Share.pdb
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.csproj.AssemblyReference.cache
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.AssemblyInfoInputs.cache
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.AssemblyInfo.cs
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.csproj.CoreCompileInputs.cache
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.csproj.CopyComplete
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\refint\NovEShop.Handler.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\NovEShop.Handler.pdb
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Handler\obj\Debug\net5.0\ref\NovEShop.Handler.dll

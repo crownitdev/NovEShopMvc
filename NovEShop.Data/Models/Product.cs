@@ -14,5 +14,6 @@ namespace NovEShop.Data.Models
         public ICollection<Cart> Carts { get; set; }
         public ICollection<OrderDetail> OrderDetails { get; set; }
         public ICollection<ProductTranslation> ProductTranslations { get; set; }
+        public ICollection<ProductImage> ProductImages { get; set; }
     }
 }
