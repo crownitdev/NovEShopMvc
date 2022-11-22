@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj": {}
+    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj": {}
   },
   "projects": {
-    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
+    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj",
+        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj",
         "projectName": "NovEShop.Data",
-        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj",
+        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj",
         "packagesPath": "C:\\Users\\ADMINIS\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\obj\\",
+        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
@@ -33,8 +33,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj": {
-                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj"
+              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj": {
+                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj"
               }
             }
           }
@@ -98,14 +98,14 @@
         }
       }
     },
-    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj": {
+    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj",
+        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj",
         "projectName": "NovEShop.Handler",
-        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj",
+        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj",
         "packagesPath": "C:\\Users\\ADMINIS\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Handler\\obj\\",
+        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Handler\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
@@ -127,11 +127,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
-                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj"
+              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
+                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj"
               },
-              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj": {
-                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj"
+              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj": {
+                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj"
               }
             }
           }
@@ -171,14 +171,14 @@
         }
       }
     },
-    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj": {
+    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj",
+        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj",
         "projectName": "NovEShop.Share",
-        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj",
+        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj",
         "packagesPath": "C:\\Users\\ADMINIS\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\obj\\",
+        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
@@ -240,14 +240,14 @@
         }
       }
     },
-    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj": {
+    "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
+        "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
         "projectName": "NovEShop.Web",
-        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
+        "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
         "packagesPath": "C:\\Users\\ADMINIS\\.nuget\\packages\\",
-        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\obj\\",
+        "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
@@ -269,11 +269,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
-                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj"
+              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
+                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj"
               },
-              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj": {
-                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj"
+              "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj": {
+                "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj"
               }
             }
           }

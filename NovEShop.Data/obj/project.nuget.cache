@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b0IKB7VlZRaQHQ5Rxd0OEmd+lyda2NEOUjH1xUMUJjo2b57Aa75Ks/ozk2c6VMu5cora7VfgY5k8GvJD1P3SOQ==",
+  "dgSpecHash": "KtZwvxH8Os6ueDc78/2tkGH9U2Ponh9Gthyrp2o+eKGVJgoowRNNA0fp2UqFvLQ3FM8pUeq8UzdFkNPu7PZ8vw==",
   "success": true,
-  "projectFilePath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj",
+  "projectFilePath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMINIS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ADMINIS\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",

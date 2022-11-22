@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pqD+gpaHZAgQiPg8YqKAw+7bK+AKXstDoXuFcsHCqT4sqz8gslw104nC65jnfejFCh/K7cKLcSYb0twHGKN5bw==",
+  "dgSpecHash": "nJCebWPJbBT7tkRdcPp25gjVCMxxHn9+2gYRjhofXL/HyPCG9XUkKflaNrYAsHeWvfCF2/YlDLfHedWZvy25Fg==",
   "success": true,
-  "projectFilePath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj",
+  "projectFilePath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Share\\NovEShop.Share.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMINIS\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.17\\microsoft.aspnetcore.cryptography.internal.5.0.17.nupkg.sha512",
     "C:\\Users\\ADMINIS\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.17\\microsoft.aspnetcore.cryptography.keyderivation.5.0.17.nupkg.sha512",
