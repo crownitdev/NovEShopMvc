@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4DMJ0IvRIjgZVYRHfww6WaxSJKrmaSTr0TKImC4LA1qi2TvZOACFGaRZgerSQbkVOWGBy0dVjAFf+BbtqB2vww==",
+  "dgSpecHash": "Q67k1h1yzsSSQB3q3mmgnesjbmm1ZAEST5m80XeahOJZ5Hhn87WRk474oNTzLlElfzwFb07+sXpckJKFHE8p1g==",
   "success": true,
-  "projectFilePath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
+  "projectFilePath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMINIS\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ADMINIS\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",

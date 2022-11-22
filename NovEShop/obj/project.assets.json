@@ -7370,19 +7370,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ADMINIS\\.nuget\\packages\\": {}
+    "C:\\Users\\ADMINIS\\.nuget\\packages\\": {},
+    "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
+      "projectUniqueName": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
       "projectName": "NovEShop.Web",
-      "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
+      "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\NovEShop.Web.csproj",
       "packagesPath": "C:\\Users\\ADMINIS\\.nuget\\packages\\",
-      "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop\\obj\\",
+      "outputPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages"
+      ],
       "configFilePaths": [
         "C:\\Users\\ADMINIS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7390,17 +7395,18 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
-              "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj"
+            "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj": {
+              "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Data\\NovEShop.Data.csproj"
             },
-            "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj": {
-              "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj"
+            "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj": {
+              "projectPath": "D:\\Ky 1-Nam 4\\DACN1\\Final\\NovEShop\\NovEShopMvc\\NovEShop.Handler\\NovEShop.Handler.csproj"
             }
           }
         }
