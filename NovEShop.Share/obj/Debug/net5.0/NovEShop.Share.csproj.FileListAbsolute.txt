@@ -22,3 +22,15 @@ D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.S
 D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\refint\NovEShop.Share.dll
 D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.pdb
 D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\ref\NovEShop.Share.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\bin\Debug\net5.0\NovEShop.Share.deps.json
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\bin\Debug\net5.0\NovEShop.Share.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\bin\Debug\net5.0\NovEShop.Share.pdb
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.csproj.AssemblyReference.cache
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.GeneratedMSBuildEditorConfig.editorconfig
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.AssemblyInfoInputs.cache
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.AssemblyInfo.cs
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.csproj.CoreCompileInputs.cache
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\refint\NovEShop.Share.dll
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\NovEShop.Share.pdb
+D:\Ky 1-Nam 4\DACN1\Final\NovEShopMvc\NovEShopMvc\NovEShop.Share\obj\Debug\net5.0\ref\NovEShop.Share.dll
