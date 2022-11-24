@@ -74,3 +74,7 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\obj\Debug\ne
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\obj\Debug\net5.0\NovEShop.Api.genruntimeconfig.cache
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Microsoft.OpenApi.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
