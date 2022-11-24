@@ -28,5 +28,16 @@ namespace NovEShop.Web.Controllers
             var response = await _broker.Query(request);
             return View(response);
         }
+        
+        public async Task<IActionResult> Detail([FromQuery] GetProductByIdQuery request)
+        {
+            var response = await _broker.Query(request);
+            if (response.IsSucceed)
+            {
+                return View(response.Data);
+            }
+
+            return RedirectToAction("NotFound", controllerName: "Home");
+        }
     }
 }

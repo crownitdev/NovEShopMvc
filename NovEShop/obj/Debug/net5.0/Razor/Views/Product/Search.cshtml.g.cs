@@ -47,8 +47,15 @@ using NovEShop.Handler.Commons;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 6 "E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop\Views\_ViewImports.cshtml"
+using NovEShop.Handler.Products.Dtos;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"57218c316b6921e2cd61027a2387edc31a2d9471", @"/Views/Product/Search.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"e8e518b51e4068c06b23ebd674c0ac0ab9035e43", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b664f0da061eed1d8cf4a442f83b48d134ee38c9", @"/Views/_ViewImports.cshtml")]
     public class Views_Product_Search : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

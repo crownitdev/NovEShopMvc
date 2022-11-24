@@ -11,6 +11,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.4.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.4.0" />
 		<ProjectReference Include="..\NovEShop.Data\NovEShop.Data.csproj" />
 		<ProjectReference Include="..\NovEShop.Handler\NovEShop.Handler.csproj" />
 		<ProjectReference Include="..\NovEShop.Share\NovEShop.Share.csproj" />

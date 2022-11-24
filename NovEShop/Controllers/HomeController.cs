@@ -77,5 +77,11 @@ namespace NovEShop.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [Route("/notfound")]
+        public override NotFoundResult NotFound()
+        {
+            return base.NotFound();
+        }
     }
 }
