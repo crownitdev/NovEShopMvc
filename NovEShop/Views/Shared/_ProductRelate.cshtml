@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ProductViewModel>
+    <!-- Products Start -->
+<div class="row">
+
+    <div class="col-12">
+        <!-- Section Title Start -->
+        <div class="section-title aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="title pb-3">You Might Also Like</h2>
+            <span></span>
+            <div class="title-border-bottom"></div>
+        </div>
+        <!-- Section Title End -->
+    </div>
+
+    <div class="col">
+        <div class="product-carousel">
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+
+                    @foreach (var product in Model)
+                    {
+                        <!-- Product Start -->
+                        <div class="swiper-slide product-wrapper">
+
+                            <!-- Single Product Start -->
+                            <div class="product product-border-left" data-aos="fade-up" data-aos-delay="300">
+                                <div class="thumb">
+                                    <a href="single-product.html" class="image">
+                                        <img class="first-image" src="~/assets/images/products/medium-size/1.jpg" alt="Product" />
+                                        <img class="second-image" src="~/assets/images/products/medium-size/5.jpg" alt="Product" />
+                                    </a>
+                                    <div class="actions">
+                                        <a href="#" class="action wishlist"><i class="pe-7s-like"></i></a>
+                                        <a href="#" class="action quickview" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="pe-7s-search"></i></a>
+                                        <a href="#" class="action compare"><i class="pe-7s-shuffle"></i></a>
+                                    </div>
+                                </div>
+                                <div class="content">
+                                    <h4 class="sub-title"><a href="single-product.html">Studio Design</a></h4>
+                                    <h5 class="title"><a href="/Product/@product.Id">@product.Name</a></h5>
+                                    <span class="ratings">
+                                        <span class="rating-wrap">
+                                            <span class="star" style="width: 100%"></span>
+                                        </span>
+                                        <span class="rating-num">(4)</span>
+                                    </span>
+                                    <span class="price">
+                                        <span class="new">@product.Price</span>
+                                        <span class="old">@product.OriginalPrice</span>
+                                    </span>
+                                    <button class="btn btn-sm btn-outline-dark btn-hover-primary">Add To Cart</button>
+                                </div>
+                            </div>
+                            <!-- Single Product End -->
+
+                        </div>
+                        <!-- Product End -->
+                    }
+                </div>
+
+                <!-- Swiper Pagination Start -->
+                <div class="swiper-pagination d-md-none"></div>
+                <!-- Swiper Pagination End -->
+                <!-- Next Previous Button Start -->
+                <div class="swiper-product-button-next swiper-button-next swiper-button-white d-md-flex d-none"><i class="pe-7s-angle-right"></i></div>
+                <div class="swiper-product-button-prev swiper-button-prev swiper-button-white d-md-flex d-none"><i class="pe-7s-angle-left"></i></div>
+                <!-- Next Previous Button End -->
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- Products End -->

@@ -7,6 +7,7 @@ using NovEShop.Share.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
@@ -35,13 +36,36 @@ namespace NovEShop.Handler.Products.Commands
             var response = new CreateProductCommandResult();
             response.Errors = new List<string>();
 
+            // check product is existed
+            var existProducts= _dbContext.ProductTranslations.Where(p => p.Name == request.Name).Count();
+            if (existProducts > 0)
+            {
+                response.Message = "Tạo sản phẩm thất bại";
+                response.Errors.Add("Sản phẩm đã tồn tại");
+                response.IsSucceed = false;
+
+                return response;
+            }
+
             // validating request data
             if (string.IsNullOrEmpty(request.Name))
             {
                 response.Errors.Add("Tên sản phẩm không được bỏ trống");
+            }
+
+            if (request.Stock <= 0)
+            {
+                response.Errors.Add("Stock sản phẩm không được nhỏ hơn 0");
+            }
+
+            if (response.Errors.Count > 0)
+            {
+                response.Message = "Tạo sản phẩm thất bại";
                 response.IsSucceed = false;
                 return response;
             }
+
+            var category = await _dbContext.Categories.FindAsync(request.CategoryId);
 
             var product = new Product()
             {
@@ -65,6 +89,17 @@ namespace NovEShop.Handler.Products.Commands
                 }
             };
 
+            if (category != null)
+            {
+                product.ProductCategories = new List<ProductCategories>()
+                {
+                    new ProductCategories()
+                    {
+                        CategoryId = category.Id,
+                    }
+                };
+            }
+
             if (request.ThumbnailImage != null)
             {
                 product.ProductImages = new List<ProductImage>()
@@ -84,6 +119,7 @@ namespace NovEShop.Handler.Products.Commands
             _dbContext.Products.Add(product);
             await _dbContext.SaveChangesAsync();
 
+            response.ProductId = product.Id;
             response.Message = "Tạo sản phẩm thành công";
             response.IsSucceed = true;
 
@@ -102,6 +138,7 @@ namespace NovEShop.Handler.Products.Commands
 
     public class CreateProductCommandResult
     {
+        public int? ProductId { get; set; }
         public string Message { get; set; }
         public List<string> Errors { get; set; }
         public bool IsSucceed { get; set; }
