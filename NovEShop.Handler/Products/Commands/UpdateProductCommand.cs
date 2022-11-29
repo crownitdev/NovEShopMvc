@@ -62,6 +62,7 @@ namespace NovEShop.Handler.Products.Commands
             }
 
             var saveChangeState = await _db.SaveChangesAsync();
+            response.AffectResult = saveChangeState;
 
             if (saveChangeState > 0)
             {
@@ -80,6 +81,7 @@ namespace NovEShop.Handler.Products.Commands
 
     public class UpdateProductCommandResponse : Response
     {
+        public int AffectResult { get; set; }
         public UpdateProductCommandResponse()
         { }
 

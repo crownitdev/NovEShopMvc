@@ -13,6 +13,7 @@ namespace NovEShop.Handler.Products.Queries
     public class GetProductByIdQuery : IQuery<GetProductByIdQueryResponse>
     {
         public int ProductId { get; set; }
+        public string LanguageId { get; set; } = "vi-VN";
     }
 
     public class GetProductByIdQueryHandler : IQueryHandler<GetProductByIdQuery, GetProductByIdQueryResponse>
@@ -37,6 +38,7 @@ namespace NovEShop.Handler.Products.Queries
                           join pt in _db.ProductTranslations on p.Id equals pt.ProductId
                           join pc in _db.ProductCategories on p.Id equals pc.ProductId
                           join ct in _db.CategoryTranslations on pc.CategoryId equals ct.CategoryId
+                          where pt.LanguageId == request.LanguageId
                           select new { p, pt, pc, ct };
 
             var productResponse = productJoinQuery.Where(q => q.p.Id == request.ProductId)
