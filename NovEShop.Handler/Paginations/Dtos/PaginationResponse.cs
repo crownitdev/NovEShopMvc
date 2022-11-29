@@ -14,10 +14,11 @@ namespace NovEShop.Handler.Paginations.Dtos
         public Uri NextPage { get; set; }
         public Uri PreviousPage { get; set; }
 
+
         public PaginationResponse(
             T data,
-            int pageNumber,
-            int pageSize)
+            int pageNumber = 1,
+            int pageSize = 10)
             : base(data)
         {
             this.PageSize = pageSize;
@@ -33,11 +34,12 @@ namespace NovEShop.Handler.Paginations.Dtos
             PageSize = paginationFilter.PageSize;
         }
 
-        public PaginationResponse(T data,
-            int pageNumber,
-            int pageSize,
+        public PaginationResponse(
+            T data,
             int totalRecords,
-            int totalPages)
+            int totalPages,
+            int pageNumber = 1,
+            int pageSize = 10)
             :this(data, pageNumber, pageSize)
         {
             this.TotalPages = totalPages;

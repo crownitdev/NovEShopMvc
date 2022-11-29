@@ -1,4 +1,5 @@
 ﻿using NovEShop.Data;
+using NovEShop.Handler.Commons;
 using NovEShop.Handler.Infrastructure;
 using NovEShop.Share.Exceptions.Products;
 using System.Threading;
@@ -6,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace NovEShop.Handler.Products.Commands
 {
-    public class UpdateProductStockCommand : ICommand<bool>
+    public class UpdateProductStockCommand : ICommand<UpdateProductStockCommandResponse>
     {
         public int ProductId { get; set; }
         public int NewStock { get; set; }
     }
 
-    public class UpdateProductStockCommandHandler : ICommandHandler<UpdateProductStockCommand, bool>
+    public class UpdateProductStockCommandHandler : ICommandHandler<UpdateProductStockCommand, UpdateProductStockCommandResponse>
     {
         private readonly NovEShopDbContext _db;
 
@@ -21,7 +22,7 @@ namespace NovEShop.Handler.Products.Commands
             _db = db;
         }
 
-        public async Task<bool> Handle(UpdateProductStockCommand request, CancellationToken cancellationToken)
+        public async Task<UpdateProductStockCommandResponse> Handle(UpdateProductStockCommand request, CancellationToken cancellationToken)
         {
             var product = await _db.Products.FindAsync(request.ProductId);
             if (product == null)
@@ -30,7 +31,27 @@ namespace NovEShop.Handler.Products.Commands
             }
 
             product.Stock = request.NewStock;
-            return await _db.SaveChangesAsync() > 0;
+
+            var response = new UpdateProductStockCommandResponse();
+            response.AffectedRows = await _db.SaveChangesAsync();
+
+            if (response.AffectedRows <= 0)
+            {
+                response.IsSucceed = false;
+                response.Message = $"Cập nhật lượt xem sản phẩm {request.ProductId} thất bại";
+            }
+            else
+            {
+                response.IsSucceed = true;
+                response.Message = $"Cập nhật lượt xem sản phẩm {request.ProductId} thành công";
+            }
+
+            return response;
         }
+    }
+
+    public class UpdateProductStockCommandResponse : Response
+    {
+        public int AffectedRows { get; set; }
     }
 }

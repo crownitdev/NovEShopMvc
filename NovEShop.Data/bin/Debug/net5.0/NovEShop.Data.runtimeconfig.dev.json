@@ -3,6 +3,7 @@
     "additionalProbingPaths": [
       "C:\\Users\\catpi\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\catpi\\.nuget\\packages",
+      "D:\\DevExpress\\Components\\Offline Packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ]
   }

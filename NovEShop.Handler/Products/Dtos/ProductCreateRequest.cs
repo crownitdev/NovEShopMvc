@@ -5,6 +5,7 @@ namespace NovEShop.Handler.Products.Dtos
     public class ProductCreateRequest
     {
         public decimal Price { get; set; }
+        public int CategoryId { get; set; }
         public decimal OriginalPrice { get; set; }
         public int Stock { get; set; }
         public string Name { get; set; }

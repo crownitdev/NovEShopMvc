@@ -53,6 +53,7 @@ namespace NovEShop.Handler.Products.Queries
                 })
                 .ToListAsync(cancellationToken);
 
+            
             //var queryResponse = await query.ToListAsync();
 
             var response = new GetProductsByCategoryNamePagingQueryResponse(
@@ -60,11 +61,15 @@ namespace NovEShop.Handler.Products.Queries
                 request.PageNumber,
                 request.PageSize)
             {
-                IsSucceed = true,
-                Message = "Lấy dữ liệu thành công",
-                TotalRecords = dataResponse.Count,
-                TotalPages = Convert.ToInt32(dataResponse.Count / request.PageSize)
+                
             };
+
+            var rowCount = dataResponse.Count;
+            response.TotalRecords = rowCount;
+            response.IsSucceed = true;
+            response.Message = "Lấy dữ liệu thành công";
+            response.TotalRecords = dataResponse.Count;
+            response.TotalPages = Convert.ToInt32(dataResponse.Count / request.PageSize);
 
             return response;
         }

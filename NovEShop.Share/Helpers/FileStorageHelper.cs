@@ -24,7 +24,7 @@ namespace NovEShop.Share.Helpers
 
         public FileStorageHelper(IWebHostEnvironment host)
         {
-            _userContentFolder = Path.Combine(host.WebRootPath, USER_CONTENT_FOLDER_NAME);
+            _userContentFolder = Path.Combine(host.ContentRootPath, USER_CONTENT_FOLDER_NAME);
         }
 
         public async Task DeleteFileAsync(string fileName)
