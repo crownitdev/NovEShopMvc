@@ -1,12 +1,13 @@
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NovEShop.Data;
 using NovEShop.Data.Models.Commons;
@@ -15,8 +16,7 @@ using NovEShop.Share.Constants;
 using NovEShop.Share.Helpers;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace NovEShop.Api
 {
@@ -53,12 +53,67 @@ namespace NovEShop.Api
             services.AddMediatR(typeof(IBroker).Assembly);
             services.AddTransient<IBroker, Broker>();
 
+            var jwtIssuer = Configuration["JwtOptions:Issuer"];
+            var signinKey = Configuration["JwtOptions:SignInKey"];
+            services.AddAuthentication(authConfig =>
+            {
+                authConfig.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                authConfig.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = true;
+                    options.SaveToken = true;
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidIssuer = jwtIssuer,
+                        ValidateAudience = true,
+                        ValidAudience = jwtIssuer,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ClockSkew = TimeSpan.Zero,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signinKey))
+                    };
+                });
+
             // Register the Swagger generator, define 1 or more Swagger documents
             // This adds Swagger generator to service collections
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+
+                // Add Authorization header for Swagger
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = @"JWT Authorization header using Bearer Scheme. \r\n\r\n
+                                    Enter 'Bearer' [space] and then your token in the text input below.
+                                    \r\n\r\nExample: 'Bearer 123456abcdef'",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header
+                        },
+                        new List<string>()
+                    }
+                });
             });
+
 
             services.AddControllersWithViews();
         }
@@ -77,22 +132,23 @@ namespace NovEShop.Api
                 app.UseHsts();
             }
 
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseAuthentication();
+            app.UseRouting();
+
+            app.UseAuthorization();
+
             // Enable middleware to serve generated Swagger as JSON endpoints.
             app.UseSwagger();
 
             // Enable middleware to serve swagger-ui (HTML, CSS, JS, etc.)
-            app.UseSwaggerUI(c => 
+            app.UseSwaggerUI(c =>
             {
                 // Specifying the Swagger JSON endpoint.
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
