@@ -136,6 +136,7 @@ namespace NovEShop.Api.Controllers
             return Ok(response);
         }
 
+        [HttpGet("{ProductId}/Images/{ImageId}")]
         public async Task<IActionResult> GetImageById(GetProductImageByIdQuery request)
         {
             var image = await _broker.Query(request);
