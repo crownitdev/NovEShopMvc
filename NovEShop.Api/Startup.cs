@@ -2,12 +2,14 @@ using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using NovEShop.Data;
+using NovEShop.Data.Models.Commons;
 using NovEShop.Handler.Infrastructure;
 using NovEShop.Share.Constants;
 using NovEShop.Share.Helpers;
@@ -34,6 +36,18 @@ namespace NovEShop.Api
             {
                 options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.NovEShopConnectionStringKey));
             });
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options => 
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 6;
+
+                options.User.RequireUniqueEmail = true;
+            })
+                .AddEntityFrameworkStores<NovEShopDbContext>()
+                .AddDefaultTokenProviders();
+
 
             services.AddTransient<IFileStorageHelper, FileStorageHelper>();
             services.AddMediatR(typeof(IBroker).Assembly);
