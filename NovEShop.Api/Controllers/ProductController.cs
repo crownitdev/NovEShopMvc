@@ -9,6 +9,7 @@ namespace NovEShop.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IBroker _broker;
