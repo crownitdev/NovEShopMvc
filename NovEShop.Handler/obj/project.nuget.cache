@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "bHsh5fNigR9IKLYrKcFE3srENW5Qy5Zfuqr9XsMY6934OjbIaYnYOlRr5QhNa7Gdf7lCoPqcptvXiG6HBwb9vQ==",
+  "dgSpecHash": "KR6uKMCjpvQwAISeJV60/+w2Klq+jqDjkqp8xAxnRoInolU5yX7iduJ65zx3SmTa2AhEA6gIRWYSPdyzF6U99g==",
   "success": true,
   "projectFilePath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\catpi\\.nuget\\packages\\fluentvalidation\\11.2.1\\fluentvalidation.11.2.1.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.2\\fluentvalidation.aspnetcore.11.2.2.nupkg.sha512",
+    "C:\\Users\\catpi\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.1\\fluentvalidation.dependencyinjectionextensions.11.2.1.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\mediatr\\11.0.0\\mediatr.11.0.0.nupkg.sha512",
     "C:\\Users\\catpi\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

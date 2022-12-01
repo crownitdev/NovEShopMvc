@@ -1,26 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+	</PropertyGroup>
 
-  <!--<ItemGroup>
+	<!--<ItemGroup>
     <Folder Include="Accounts\Dtos\" />
     <Folder Include="Accounts\Queries\" />
     <Folder Include="Categories\Queries\" />
   </ItemGroup>-->
 
-  <ItemGroup>
-    <PackageReference Include="MediatR" Version="11.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MediatR" Version="11.0.0" />
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
 
-  <ItemGroup>
-    <ProjectReference Include="..\NovEShop.Data\NovEShop.Data.csproj" />
-    <ProjectReference Include="..\NovEShop.Share\NovEShop.Share.csproj" />
-  </ItemGroup>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Accounts\Queries\" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\NovEShop.Data\NovEShop.Data.csproj" />
+		<ProjectReference Include="..\NovEShop.Share\NovEShop.Share.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Accounts\Queries\" />
+	</ItemGroup>
 
 </Project>

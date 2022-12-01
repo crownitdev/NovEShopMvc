@@ -32,7 +32,6 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\ne
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Newtonsoft.Json.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -78,3 +77,7 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\ne
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\FluentValidation.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\FluentValidation.AspNetCore.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\FluentValidation.DependencyInjectionExtensions.dll
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.Api\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
