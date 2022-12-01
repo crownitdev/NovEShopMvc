@@ -33,7 +33,7 @@ namespace NovEShop.Api.Controllers
 
         [HttpPost("/Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromForm] LoginCommand request)
+        public async Task<IActionResult> Login([FromBody] LoginCommand request)
         {
             var validateResult = await _loginValidator.ValidateAsync(request);
             if (!validateResult.IsValid)
