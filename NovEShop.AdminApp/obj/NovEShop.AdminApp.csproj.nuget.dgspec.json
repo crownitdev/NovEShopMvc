@@ -37,6 +37,9 @@
             "projectReferences": {
               "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj": {
                 "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj"
+              },
+              "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj": {
+                "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj"
               }
             }
           }

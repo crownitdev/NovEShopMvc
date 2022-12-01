@@ -13,6 +13,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\NovEShop.Handler\NovEShop.Handler.csproj" />
+	  <ProjectReference Include="..\NovEShop.Share\NovEShop.Share.csproj" />
 	</ItemGroup>
 
 </Project>

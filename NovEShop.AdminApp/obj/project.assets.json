@@ -7101,7 +7101,8 @@
       "MediatR >= 11.0.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 11.0.0",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 5.0.17",
-      "NovEShop.Handler >= 1.0.0"
+      "NovEShop.Handler >= 1.0.0",
+      "NovEShop.Share >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7142,6 +7143,9 @@
           "projectReferences": {
             "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj": {
               "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Handler\\NovEShop.Handler.csproj"
+            },
+            "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj": {
+              "projectPath": "E:\\Mine\\University\\4th\\first\\DACN 1\\eshop-mvc\\NovEShop\\NovEShop.Share\\NovEShop.Share.csproj"
             }
           }
         }
