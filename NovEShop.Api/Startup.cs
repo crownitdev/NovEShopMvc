@@ -1,3 +1,5 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -11,7 +13,9 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using NovEShop.Data;
 using NovEShop.Data.Models.Commons;
+using NovEShop.Handler.Accounts.Dtos;
 using NovEShop.Handler.Infrastructure;
+using NovEShop.Handler.Validators;
 using NovEShop.Share.Constants;
 using NovEShop.Share.Helpers;
 using System;
@@ -53,6 +57,8 @@ namespace NovEShop.Api
             services.AddMediatR(typeof(IBroker).Assembly);
             services.AddTransient<IBroker, Broker>();
 
+            //services.AddTransient<IValidator<LoginRequestDto>, LoginRequestDtoValidator>();
+
             var jwtIssuer = Configuration["JwtOptions:Issuer"];
             var signinKey = Configuration["JwtOptions:SignInKey"];
             services.AddAuthentication(authConfig =>
@@ -76,6 +82,9 @@ namespace NovEShop.Api
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signinKey))
                     };
                 });
+
+            services.AddControllers();
+            services.AddValidatorsFromAssemblyContaining<LoginRequestDtoValidator>();
 
             // Register the Swagger generator, define 1 or more Swagger documents
             // This adds Swagger generator to service collections
@@ -113,9 +122,6 @@ namespace NovEShop.Api
                     }
                 });
             });
-
-
-            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
