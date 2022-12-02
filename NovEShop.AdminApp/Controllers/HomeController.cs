@@ -27,6 +27,7 @@ namespace NovEShop.AdminApp.Controllers
 
         public IActionResult Index()
         {
+            var session = HttpContext.Session.GetString("Token");
             var user = User.Identity.Name;
             return View();
         }

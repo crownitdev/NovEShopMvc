@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NovEShop.Handler.Infrastructure;
+using NovEShop.Handler.Users.Commands;
 using NovEShop.Handler.Users.Queries;
 using System.Threading.Tasks;
 
@@ -23,9 +24,20 @@ namespace NovEShop.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllUsersPaging([FromQuery] GetAllUsersPagingQuery request)
         {
-
             var users = await _broker.Query(request);
             return Ok(users);
+        }
+
+        public async Task<IActionResult> Create([FromBody] CreateUserCommand request)
+        {
+            var result = await _broker.Command(request);
+            
+            if(!result.IsSucceed)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
         }
     }
 }

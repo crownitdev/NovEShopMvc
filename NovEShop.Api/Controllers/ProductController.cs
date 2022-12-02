@@ -21,7 +21,7 @@ namespace NovEShop.Api.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAll([FromQuery] GetAllProductPagingQuery request)
+        public async Task<IActionResult> GetAll([FromQuery] GetAllProductsPagingQuery request)
         {
             var response = await _broker.Query(request);
             return Ok(response);
