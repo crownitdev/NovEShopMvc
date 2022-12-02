@@ -60,7 +60,8 @@ namespace NovEShop.Api
             //services.AddTransient<IValidator<LoginRequestDto>, LoginRequestDtoValidator>();
 
             var jwtIssuer = Configuration["JwtOptions:Issuer"];
-            var signinKey = Configuration["JwtOptions:SignInKey"];
+            var jwtAudience = Configuration["JwtOptions:Audience"];
+            var signingKey = Configuration["JwtOptions:SigningKey"];
             services.AddAuthentication(authConfig =>
             {
                 authConfig.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -75,11 +76,11 @@ namespace NovEShop.Api
                         ValidateIssuer = true,
                         ValidIssuer = jwtIssuer,
                         ValidateAudience = true,
-                        ValidAudience = jwtIssuer,
+                        ValidAudience = jwtAudience,
                         ValidateLifetime = true,
                         ValidateIssuerSigningKey = true,
                         ClockSkew = TimeSpan.Zero,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signinKey))
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signingKey))
                     };
                 });
 

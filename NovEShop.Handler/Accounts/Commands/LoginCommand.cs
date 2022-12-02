@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using NovEShop.Data;
 using NovEShop.Data.Models.Commons;
 using NovEShop.Handler.Accounts.Dtos;
 using NovEShop.Handler.Commons;
 using NovEShop.Handler.Infrastructure;
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading;
@@ -24,8 +26,10 @@ namespace NovEShop.Handler.Accounts.Commands
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly IConfiguration _configuration;
+        private readonly NovEShopDbContext _db;
 
         public LoginCommandHandler(
+            NovEShopDbContext db,
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             RoleManager<ApplicationRole> roleManager,
@@ -35,6 +39,7 @@ namespace NovEShop.Handler.Accounts.Commands
             _signInManager = signInManager;
             _roleManager = roleManager;
             _configuration = configuration;
+            _db = db;
         }
 
         public async Task<LoginCommandResponse> Handle(LoginCommand request, CancellationToken cancellationToken)
@@ -51,6 +56,10 @@ namespace NovEShop.Handler.Accounts.Commands
 
             // Check user is existed
             var user = await _userManager.FindByNameAsync(request.UserName);
+            if (user == null)
+            {
+                user = _db.Users.Where(x => x.UserName == request.UserName).FirstOrDefault();
+            }
 
             if (user == null)
             {
@@ -102,11 +111,11 @@ namespace NovEShop.Handler.Accounts.Commands
             {
                 new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.MobilePhone, user.PhoneNumber?? ""),
-                new Claim(ClaimTypes.GivenName, user.FullName),
+                new Claim(ClaimTypes.Name, user.FullName),
                 new Claim(ClaimTypes.Role, string.Join(",", roles)?? "")
             };
 
-            var token = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtOptions:SecurityKey"]));
+            var token = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtOptions:SigningKey"]));
             var creds = new SigningCredentials(token, SecurityAlgorithms.HmacSha256);
 
             var jwtSecurityToken = new JwtSecurityToken(

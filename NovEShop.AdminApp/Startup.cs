@@ -1,12 +1,18 @@
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using NovEShop.AdminApp.Services;
+using NovEShop.AdminApp.Services.Users;
 using NovEShop.Handler.Validators;
 using System;
+using System.Text;
 
 namespace NovEShop.AdminApp
 {
@@ -24,9 +30,29 @@ namespace NovEShop.AdminApp
         {
             services.AddHttpClient();
 
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Account/Login";
+                    options.AccessDeniedPath = "/Account/Forbidden";
+                });
+
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+            });
+
             services.AddValidatorsFromAssembly(typeof(LoginRequestDtoValidator).Assembly);
 
             services.AddTransient<IAccountApiClient, AccountApiClient>();
+            services.AddTransient<IUserApiClient, UserApiClient>();
+
+            //services.AddDistributedMemoryCache();
+            //services.AddSession(config =>
+            //{
+            //    config.IdleTimeout = TimeSpan.FromDays(7);
+            //});
 
             IMvcBuilder builder = services.AddControllersWithViews();
             var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
@@ -52,11 +78,27 @@ namespace NovEShop.AdminApp
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+
+            //app.UseSession();
+
+            //app.Use(async (context, next) =>
+            //{
+            //    var token = context.Session.GetString("TokenAuth");
+            //    if (!string.IsNullOrEmpty(token))
+            //    {
+            //        context.Request.Headers.Add("Authorization", "Bearer " + token);
+            //    }
+
+            //    await next();
+            //});
+
             app.UseStaticFiles();
 
+            app.UseAuthentication();
             app.UseRouting();
-
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

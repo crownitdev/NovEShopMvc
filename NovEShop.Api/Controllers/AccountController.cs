@@ -6,22 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using NovEShop.Handler.Accounts.Commands;
 using NovEShop.Handler.Accounts.Dtos;
 using NovEShop.Handler.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace NovEShop.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class AccountsController : ControllerBase
+    public class AccountController : ControllerBase
     {
         private readonly IBroker _broker;
         private readonly IValidator<LoginRequestDto> _loginValidator;
         private readonly IValidator<RegisterRequestDto> _registerValidator;
 
-        public AccountsController(
+        public AccountController(
             IValidator<LoginRequestDto> loginValidator,
             IValidator<RegisterRequestDto> registerValidator,
             IBroker broker)
@@ -52,7 +49,7 @@ namespace NovEShop.Api.Controllers
                 return BadRequest("Username hoặc mật khẩu không đúng");
             }
 
-            return Ok(result);
+            return Ok(result.TokenAuth);
         }
 
         [HttpPost("/Register")]
