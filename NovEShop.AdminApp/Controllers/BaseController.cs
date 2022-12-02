@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -11,6 +13,16 @@ namespace NovEShop.AdminApp.Controllers
 {
     public class BaseController : Controller
     {
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            var session = HttpContext.Session.GetString("Token");
+            if (session == null)
+            {
+                context.Result = RedirectToAction("Login", "Account", null);
+            }
+            base.OnActionExecuting(context);
+        }
+
         protected ClaimsPrincipal ValidateToken(string jwtToken, IConfiguration _configuration)
         {
 

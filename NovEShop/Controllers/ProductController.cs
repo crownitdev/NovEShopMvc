@@ -19,7 +19,7 @@ namespace NovEShop.Web.Controllers
 
         public IActionResult Index()
         {
-            var response = _broker.Query(new GetAllProductPagingQuery());
+            var response = _broker.Query(new GetAllProductsPagingQuery());
             return View();
         }
 

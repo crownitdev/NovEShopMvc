@@ -1,12 +1,12 @@
 ﻿using FluentValidation;
-using NovEShop.Handler.Accounts.Dtos;
+using NovEShop.Handler.Users.Commands;
 using System;
 
 namespace NovEShop.Handler.Validators
 {
-    public class RegisterRequestDtoValidator : AbstractValidator<RegisterRequestDto>
+    public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
     {
-        public RegisterRequestDtoValidator()
+        public CreateUserCommandValidator()
         {
             RuleFor(x => x.UserName).NotEmpty().WithMessage("Username không được bỏ trống");
 

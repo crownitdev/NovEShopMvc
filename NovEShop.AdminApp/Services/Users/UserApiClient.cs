@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using NovEShop.Handler.Users.Commands;
 using NovEShop.Handler.Users.Queries;
 using NovEShop.Share.Constants;
 using System;
@@ -19,6 +20,22 @@ namespace NovEShop.AdminApp.Services.Users
             IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
+        }
+
+        public async Task<CreateUserCommandResponse> CreateUser(CreateUserCommand request)
+        {
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(ApiUrlConstants.ServeApiUrl);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", request.Token);
+            var response = await client.PostAsync($"/api/user/create", httpContent);
+
+            var body = await response.Content.ReadAsStringAsync();
+            var users = JsonConvert.DeserializeObject<CreateUserCommandResponse>(body);
+
+            return users;
         }
 
         public async Task<GetAllUsersPagingQueryResponse> GetAllUsersPaging(GetAllUsersPagingQuery request)

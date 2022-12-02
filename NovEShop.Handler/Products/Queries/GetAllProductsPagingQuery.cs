@@ -8,19 +8,20 @@ using NovEShop.Handler.Infrastructure;
 using NovEShop.Data;
 using NovEShop.Handler.Paginations.Dtos;
 using NovEShop.Handler.Products.Dtos;
-using NovEShop.Data.Models;
 
 namespace NovEShop.Handler.Products.Queries
 {
-    public class GetAllProductPagingQuery : PaginationFilter, IQuery<GetAllProductPagingQueryResposne>
+    public class GetAllProductsPagingQuery : PaginationFilter, IQuery<GetAllProductsPagingQueryResponse>
     {
-        public GetAllProductPagingQuery()
+        public string Token { get; set; }
+        public string Keyword { get; set; }
+        public GetAllProductsPagingQuery()
             : base(pageSize: 10, pageNumber: 1)
         {
         }
     }
 
-    public class GetAllProductPagingQueryHandler : IQueryHandler<GetAllProductPagingQuery, GetAllProductPagingQueryResposne>
+    public class GetAllProductPagingQueryHandler : IQueryHandler<GetAllProductsPagingQuery, GetAllProductsPagingQueryResponse>
     {
         private readonly NovEShopDbContext _dbContext;
 
@@ -30,7 +31,7 @@ namespace NovEShop.Handler.Products.Queries
             _dbContext = dbContext;
         }
 
-        public async Task<GetAllProductPagingQueryResposne> Handle(GetAllProductPagingQuery request, CancellationToken cancellationToken)
+        public async Task<GetAllProductsPagingQueryResponse> Handle(GetAllProductsPagingQuery request, CancellationToken cancellationToken)
         {
             //var query = from p in _dbContext.Products
             //            join pt in _dbContext.ProductTranslations on p.Id equals pt.ProductId
@@ -77,7 +78,7 @@ namespace NovEShop.Handler.Products.Queries
 
             var rowCount = products.Count;
 
-            var response = new GetAllProductPagingQueryResposne(products, request.PageNumber, request.PageSize)
+            var response = new GetAllProductsPagingQueryResponse(products, request.PageNumber, request.PageSize)
             {
                 TotalRecords = rowCount,
                 IsSucceed = true,
@@ -89,9 +90,9 @@ namespace NovEShop.Handler.Products.Queries
         }
     }
 
-    public class GetAllProductPagingQueryResposne : PaginationResponse<ICollection<ProductMetaViewModel>>
+    public class GetAllProductsPagingQueryResponse : PaginationResponse<ICollection<ProductMetaViewModel>>
     {
-        public GetAllProductPagingQueryResposne(ICollection<ProductMetaViewModel> products, int pageNumber, int pageSize)
+        public GetAllProductsPagingQueryResponse(ICollection<ProductMetaViewModel> products, int pageNumber, int pageSize)
             : base(products, pageNumber, pageSize)
         {
         }
