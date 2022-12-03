@@ -58,7 +58,7 @@ namespace NovEShop.Handler.Users.Commands
 
             var saveChangeState = await _db.SaveChangesAsync();
 
-            if (saveChangeState > 0)
+            if (saveChangeState >= 0)
             {
                 response.Message = $"Cập nhật người dùng {request.Id} thành công";
                 response.IsSucceed = true;
