@@ -77,5 +77,23 @@ namespace NovEShop.Api.Controllers
 
             return Ok(result);
         }
+
+        [HttpPut("{id}/roles")]
+        public async Task<IActionResult> RoleAssign(int id, [FromBody]AssignRolesToUserCommand request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var response = await _broker.Command(request);
+
+            if (!response.IsSucceed)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
+        }
     }
 }

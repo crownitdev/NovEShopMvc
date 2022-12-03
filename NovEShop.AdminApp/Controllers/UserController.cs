@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using NovEShop.AdminApp.Services.Roles;
 using NovEShop.AdminApp.Services.Users;
 using NovEShop.Handler.Users.Commands;
 using NovEShop.Handler.Users.Dtos;
@@ -17,9 +18,11 @@ namespace NovEShop.AdminApp.Controllers
         private readonly IUserApiClient _userApiClient;
         private readonly IValidator<CreateUserCommand> _createValidator;
         private readonly IValidator<UpdateUserCommand> _updateValidator;
+        private readonly IRoleApiClient _roleApiClient;
 
         public UserController(IConfiguration configuration,
             IUserApiClient userApiClient,
+            IRoleApiClient roleApiClient,
             IValidator<CreateUserCommand> createValidator,
             IValidator<UpdateUserCommand> updateValidator)
         {
@@ -27,6 +30,7 @@ namespace NovEShop.AdminApp.Controllers
             _userApiClient = userApiClient;
             _createValidator = createValidator;
             _updateValidator = updateValidator;
+            _roleApiClient = roleApiClient;
         }
 
         public async Task<IActionResult> Index(string keyword, int pageNumber = 1, int pageSize = 1)
@@ -174,6 +178,60 @@ namespace NovEShop.AdminApp.Controllers
 
             TempData["Result"] = "Xoá người dùng thành công";
             return RedirectToAction("Index", "User");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> RoleAssign(int id)
+        {
+            var roleAssignRequest = await GetRolesOfUser(id);
+            return View(roleAssignRequest);
+
+            //var updateRequest = new UpdateUserCommand()
+            //{
+            //    Id = userResponse.Data.Id,
+            //    Email = userResponse.Data.Email,
+            //    PhoneNumber = userResponse.Data.PhoneNumber,
+            //    FirstName = userResponse.Data.FirstName,
+            //    LastName = userResponse.Data.LastName,
+            //    Dob = userResponse.Data.Dob
+            //};
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RoleAssign(AssignRolesToUserCommand request)
+        {
+            request.TokenAuth = HttpContext.Session.GetString("Token");
+            var result = await _userApiClient.RoleAssign(request);
+            if (result.IsSucceed)
+            {
+                TempData["Result"] = "Cập nhật Roles cho người dùng thành công";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", result.Message);
+            var roleAssignRequest = GetRolesOfUser(request.Id);
+
+            return View(roleAssignRequest);
+        }
+
+        private async Task<RoleAssignRequestDto> GetRolesOfUser(int id)
+        {
+            var userResponse = await _userApiClient.GetUserById(new GetUserByIdQuery { Id = id, TokenAuth = HttpContext.Session.GetString("Token") });
+
+            var rolesResponse = await _roleApiClient.GetAllRoles();
+
+            var roleAssignRequest = new RoleAssignRequestDto();
+            foreach (var role in rolesResponse.Data)
+            {
+                roleAssignRequest.Roles.Add(new RoleSelectItemDto
+                {
+                    Name = role.Name,
+                    RoleId = role.Id,
+                    Selected = userResponse.Data.Roles.Contains(role.Name)
+                });
+            }
+
+            return roleAssignRequest;
         }
     }   
 }

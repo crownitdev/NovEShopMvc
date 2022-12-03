@@ -85,6 +85,22 @@ namespace NovEShop.AdminApp.Services.Users
             return responseData;
         }
 
+        public async Task<AssignRolesToUserCommandResponse> RoleAssign(AssignRolesToUserCommand request)
+        {
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(ApiUrlConstants.ServeApiUrl);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", request.TokenAuth);
+            var serverResponse = await client.PutAsync($"/api/user/roleassign/{request.Id}/roles/", httpContent);
+
+            var body = await serverResponse.Content.ReadAsStringAsync();
+
+            var responseData = JsonConvert.DeserializeObject<AssignRolesToUserCommandResponse>(body);
+            return responseData;
+        }
+
         public async Task<UpdateUserCommandResponse> UpdateUser(int id, UpdateUserCommand request)
         {
             var json = JsonConvert.SerializeObject(request);
