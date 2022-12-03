@@ -36,28 +36,41 @@ namespace NovEShop.Handler.Users.Queries
             if (string.IsNullOrEmpty(request.Id.ToString()))
             {
                 response.IsSucceed = false;
-                response.Message = "Id người dùng không tồn tại";
+                response.Message = "Id người dùng không hợp lệ";
 
                 return response;
             }
 
             var user = _userManager.Users.Where(x => x.Id == request.Id)
-                .Select(x => new UserViewModel
-                {
-                    Id = x.Id,
-                    Email = x.Email,
-                    FirstName = x.FirstName,
-                    LastName = x.LastName,
-                    IsActive = x.IsActive,
-                    PhoneNumber = x.PhoneNumber,
-                    UserName = x.UserName,
-                    Dob = x.Dob
-                })
                 .FirstOrDefault();
+
+            if (user == null)
+            {
+                response.IsSucceed = false;
+                response.Message = "Người dùng không tồn tại";
+
+                return response;
+            }
+
+            var userViewModel = new UserViewModel
+            {
+                Id = user.Id,
+                Email = user.Email,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                IsActive = user.IsActive,
+                PhoneNumber = user.PhoneNumber,
+                UserName = user.UserName,
+                Dob = user.Dob
+            };
+
+            var roles = await _userManager.GetRolesAsync(user);
+
+            userViewModel.Roles = roles;
 
             if (user != null)
             {
-                response.Data = user;
+                response.Data = userViewModel;
                 response.Message = "Lấy dữ liệu người dùng thành công";
                 response.IsSucceed = true;
             }

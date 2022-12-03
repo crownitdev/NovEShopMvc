@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using NovEShop.AdminApp.Services;
+using NovEShop.AdminApp.Services.Roles;
 using NovEShop.AdminApp.Services.Users;
 using NovEShop.Handler.Validators;
 using System;
@@ -45,8 +46,10 @@ namespace NovEShop.AdminApp
 
             services.AddValidatorsFromAssembly(typeof(LoginRequestDtoValidator).Assembly);
 
+            services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddTransient<IAccountApiClient, AccountApiClient>();
             services.AddTransient<IUserApiClient, UserApiClient>();
+            services.AddTransient<IRoleApiClient, RoleApiClient>();
 
             //services.AddDistributedMemoryCache();
             //services.AddSession(config =>

@@ -97,7 +97,8 @@
                             <td>
                                 @Html.ActionLink("Cập nhật", "Update", new { id = item.Id }) |
                                 @Html.ActionLink("Chi tiết", "Details", new { id = item.Id }) |
-                                @Html.ActionLink("Xoá", "Delete", new { id = item.Id })
+                                @Html.ActionLink("Xoá", "Delete", new { id = item.Id }) |
+                                @Html.ActionLink("Gán Role", "RoleAssign", new { id = item.Id })
                             </td>
                         </tr>
                     }

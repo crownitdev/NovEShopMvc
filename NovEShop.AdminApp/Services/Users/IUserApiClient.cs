@@ -11,5 +11,6 @@ namespace NovEShop.AdminApp.Services.Users
         Task<UpdateUserCommandResponse> UpdateUser(int id, UpdateUserCommand request);
         Task<GetUserByIdQueryResponse> GetUserById(GetUserByIdQuery request);
         Task<DeleteUserCommandResponse> DeleteUser(DeleteUserCommand request);
+        Task<AssignRolesToUserCommandResponse> RoleAssign(AssignRolesToUserCommand request);
     }
 }

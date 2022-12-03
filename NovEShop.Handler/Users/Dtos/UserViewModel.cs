@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace NovEShop.Handler.Users.Dtos
@@ -20,5 +21,6 @@ namespace NovEShop.Handler.Users.Dtos
         public DateTime Dob { get; set; }
         [Display(Name = "Đã kích hoạt")]
         public bool IsActive { get; set; }
+        public IList<string> Roles { get; set; }
     }
 }

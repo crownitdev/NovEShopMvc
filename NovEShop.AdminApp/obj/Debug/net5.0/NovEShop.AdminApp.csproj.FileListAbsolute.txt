@@ -453,3 +453,4 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Deb
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\Shared\Components\Pager\Default.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\User\Delete.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\User\RoleAssign.cshtml.g.cs
