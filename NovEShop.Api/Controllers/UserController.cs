@@ -28,11 +28,37 @@ namespace NovEShop.Api.Controllers
             return Ok(users);
         }
 
+        [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateUserCommand request)
         {
             var result = await _broker.Command(request);
             
             if(!result.IsSucceed)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
+
+        // PUT: https://localhost:5001/api/users/update/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateUserCommand request)
+        {
+            var result = await _broker.Command(request);
+            if (!result.IsSucceed)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById([FromRoute]GetUserByIdQuery request)
+        {
+            var result = await _broker.Query(request);
+            if (!result.IsSucceed)
             {
                 return BadRequest(result);
             }

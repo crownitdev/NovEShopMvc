@@ -3,8 +3,6 @@ using NovEShop.Handler.Users.Commands;
 using NovEShop.Handler.Users.Queries;
 using NovEShop.Share.Constants;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -53,6 +51,38 @@ namespace NovEShop.AdminApp.Services.Users
 
             var users = JsonConvert.DeserializeObject<GetAllUsersPagingQueryResponse>(body);
             return users;
+        }
+
+        public async Task<GetUserByIdQueryResponse> GetUserById(GetUserByIdQuery request)
+        {
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(ApiUrlConstants.ServeApiUrl);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", request.TokenAuth);
+            var serverResponse = await client.GetAsync($"/api/user/getuserbyid/{request.Id}");
+
+            var body = await serverResponse.Content.ReadAsStringAsync();
+
+            var responseData = JsonConvert.DeserializeObject<GetUserByIdQueryResponse>(body);
+            return responseData;
+        }
+
+        public async Task<UpdateUserCommandResponse> UpdateUser(int id, UpdateUserCommand request)
+        {
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(ApiUrlConstants.ServeApiUrl);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", request.TokenAuth);
+            var serverResponse = await client.PutAsync($"/api/user/update/{id}", httpContent);
+
+            var body = await serverResponse.Content.ReadAsStringAsync();
+
+            var responseData = JsonConvert.DeserializeObject<UpdateUserCommandResponse>(body);
+            return responseData;
         }
     }
 }
