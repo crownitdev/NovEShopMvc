@@ -1,4 +1,6 @@
-﻿namespace NovEShop.Handler.Users.Dtos
+﻿using System;
+
+namespace NovEShop.Handler.Users.Dtos
 {
     public class UserViewModel
     {
@@ -8,6 +10,7 @@
         public string PhoneNumber { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public DateTime Dob { get; set; }
         public bool IsActive { get; set; }
     }
 }
