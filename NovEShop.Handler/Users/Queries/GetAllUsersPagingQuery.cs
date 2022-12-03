@@ -59,6 +59,7 @@ namespace NovEShop.Handler.Users.Queries
 
 
             var response = new GetAllUsersPagingQueryResponse(data, request.PageNumber, request.PageSize);
+            response.TotalRecords = totalRows;
             response.Message = $"Đã tìm thấy {totalRows} người dùng";
             response.IsSucceed = true;
 

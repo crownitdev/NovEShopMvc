@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using NovEShop.AdminApp.Services.Users;
 using NovEShop.Handler.Users.Commands;
+using NovEShop.Handler.Users.Dtos;
 using NovEShop.Handler.Users.Queries;
 using System.Threading.Tasks;
 
@@ -28,7 +29,7 @@ namespace NovEShop.AdminApp.Controllers
             _updateValidator = updateValidator;
         }
 
-        public async Task<IActionResult> Index(string keyword, int pageNumber = 1, int pageSize = 10)
+        public async Task<IActionResult> Index(string keyword, int pageNumber = 1, int pageSize = 1)
         {
             var token = HttpContext.Session.GetString("Token");
             var request = new GetAllUsersPagingQuery()
@@ -40,7 +41,7 @@ namespace NovEShop.AdminApp.Controllers
             };
 
             var data = await _userApiClient.GetAllUsersPaging(request);
-            return View(data.Data);
+            return View(data);
         }
 
         [HttpGet]
@@ -113,6 +114,33 @@ namespace NovEShop.AdminApp.Controllers
                 return RedirectToAction("Index");
             }
             return View(request);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var response = await _userApiClient.GetUserById(new GetUserByIdQuery { Id = id, TokenAuth = HttpContext.Session.GetString("Token") });
+            if (!response.IsSucceed)
+            {
+                ModelState.AddModelError("", response.Message);
+            }
+            else
+            {
+                var userInfo = new UserViewModel()
+                {
+                    Id = response.Data.Id,
+                    Email = response.Data.Email,
+                    PhoneNumber = response.Data.PhoneNumber,
+                    FirstName = response.Data.FirstName,
+                    LastName = response.Data.LastName,
+                    Dob = response.Data.Dob,
+                    IsActive = response.Data.IsActive
+                };
+
+                return View(userInfo);
+            }
+
+            return RedirectToAction("Error", "Home");
         }
     }   
 }

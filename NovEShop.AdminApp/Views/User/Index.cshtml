@@ -1,5 +1,5 @@
-﻿@using NovEShop.Handler.Users.Dtos
-@model IEnumerable<UserViewModel>
+﻿@using NovEShop.Handler.Users.Queries
+@model GetAllUsersPagingQueryResponse
 
 @{
     ViewData["Title"] = "Index";
@@ -43,7 +43,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Data)
                     {
                         <tr>
                             <td>
@@ -77,5 +77,6 @@
                 </tbody>
             </table>
         </div>
+        @await Component.InvokeAsync("Pager", Model) 
     </div>
 </div>

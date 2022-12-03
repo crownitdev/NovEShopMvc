@@ -450,3 +450,5 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\bin\Deb
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\User\Create.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\User\Update.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\Shared\Components\Pager\Default.cshtml.g.cs

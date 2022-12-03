@@ -50,7 +50,8 @@ namespace NovEShop.Handler.Users.Queries
                     LastName = x.LastName,
                     IsActive = x.IsActive,
                     PhoneNumber = x.PhoneNumber,
-                    UserName = x.UserName
+                    UserName = x.UserName,
+                    Dob = x.Dob
                 })
                 .FirstOrDefault();
 

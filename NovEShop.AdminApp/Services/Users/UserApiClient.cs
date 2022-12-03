@@ -39,12 +39,12 @@ namespace NovEShop.AdminApp.Services.Users
         public async Task<GetAllUsersPagingQueryResponse> GetAllUsersPaging(GetAllUsersPagingQuery request)
         {
             var json = JsonConvert.SerializeObject(request);
-            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+            //var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
             var client = _httpClientFactory.CreateClient();
             client.BaseAddress = new Uri(ApiUrlConstants.ServeApiUrl);
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", request.BearerToken);
-            var response = await client.GetAsync($"/api/user/GetAllUsersPaging? + " +
+            var response = await client.GetAsync($"/api/user/GetAllUsersPaging?" +
                 $"pageNumber={request.PageNumber}&pageSize={request.PageSize}&keyword={request.Keyword}");
 
             var body = await response.Content.ReadAsStringAsync();
