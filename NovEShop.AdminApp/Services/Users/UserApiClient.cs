@@ -36,6 +36,22 @@ namespace NovEShop.AdminApp.Services.Users
             return users;
         }
 
+        public async Task<DeleteUserCommandResponse> DeleteUser(DeleteUserCommand request)
+        {
+            //var json = JsonConvert.SerializeObject(request);
+            //var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(ApiUrlConstants.ServeApiUrl);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", request.TokenAuth);
+            var response = await client.DeleteAsync($"/api/user/delete/{request.Id}/{request.TokenAuth}");
+
+            var body = await response.Content.ReadAsStringAsync();
+            var responseData = JsonConvert.DeserializeObject<DeleteUserCommandResponse>(body);
+
+            return responseData;
+        }
+
         public async Task<GetAllUsersPagingQueryResponse> GetAllUsersPaging(GetAllUsersPagingQuery request)
         {
             var json = JsonConvert.SerializeObject(request);

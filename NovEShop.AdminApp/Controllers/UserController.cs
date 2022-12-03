@@ -41,6 +41,13 @@ namespace NovEShop.AdminApp.Controllers
             };
 
             var data = await _userApiClient.GetAllUsersPaging(request);
+            ViewData["Keyword"] = keyword;
+
+            if (TempData["Result"] != null)
+            {
+                ViewData["Result"] = TempData["Result"];
+            }
+
             return View(data);
         }
 
@@ -63,6 +70,7 @@ namespace NovEShop.AdminApp.Controllers
             var result = await _userApiClient.CreateUser(request);
             if (result.IsSucceed)
             {
+                TempData["Result"] = "Tạo người dùng thành công";
                 return RedirectToAction("Index");
             }
             else
@@ -111,6 +119,7 @@ namespace NovEShop.AdminApp.Controllers
             var result = await _userApiClient.UpdateUser(request.Id, request);
             if (result.IsSucceed)
             {
+                TempData["Result"] = "Cập nhật người dùng thành công";
                 return RedirectToAction("Index");
             }
             return View(request);
@@ -141,6 +150,30 @@ namespace NovEShop.AdminApp.Controllers
             }
 
             return RedirectToAction("Error", "Home");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            return View(new DeleteUserCommand { Id = id });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(DeleteUserCommand request)
+        {
+            request.TokenAuth = HttpContext.Session.GetString("Token");
+            var response = await _userApiClient.DeleteUser(request);
+            if (!response.IsSucceed)
+            {
+                foreach (var error in response.Errors)
+                {
+                    ModelState.AddModelError("", error);
+                }
+                return View();
+            }
+
+            TempData["Result"] = "Xoá người dùng thành công";
+            return RedirectToAction("Index", "User");
         }
     }   
 }

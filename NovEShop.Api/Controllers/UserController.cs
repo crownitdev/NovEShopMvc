@@ -65,5 +65,17 @@ namespace NovEShop.Api.Controllers
 
             return Ok(result);
         }
+
+        [HttpDelete("{id}/{tokenAuth}")]
+        public async Task<IActionResult> Delete(int id, string tokenAuth)
+        {
+            var result = await _broker.Command(new DeleteUserCommand { Id = id, TokenAuth = tokenAuth });
+            if (!result.IsSucceed)
+            {
+                return BadRequest(result);
+            }
+
+            return Ok(result);
+        }
     }
 }

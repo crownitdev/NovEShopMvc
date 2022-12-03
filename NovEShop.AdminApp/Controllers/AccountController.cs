@@ -57,26 +57,34 @@ namespace NovEShop.AdminApp.Controllers
             if (!validateResult.IsValid)
             {
                 validateResult.AddToModelState(ModelState);
-                return View(ModelState);
+                return View();
             }
 
             var response = await _accountApiClient.Login(request);
 
-            var userPrincipal = this.ValidateToken(response, _configuration);
-            var authProperties = new AuthenticationProperties
+            if (!string.IsNullOrEmpty(response))
             {
-                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
-                IsPersistent = true
-            };
+                var userPrincipal = this.ValidateToken(response, _configuration);
+                var authProperties = new AuthenticationProperties
+                {
+                    ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
+                    IsPersistent = true
+                };
 
-            HttpContext.Session.SetString("Token", response);
+                HttpContext.Session.SetString("Token", response);
 
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                userPrincipal,
-                authProperties);
+                await HttpContext.SignInAsync(
+                    CookieAuthenticationDefaults.AuthenticationScheme,
+                    userPrincipal,
+                    authProperties);
 
-            return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không đúng");
+                return View();
+            }
         }
 
         public async Task<IActionResult> Logout()
