@@ -1,0 +1,111 @@
+﻿@using NovEShop.Handler.Products.Queries
+@model GetAllProductsPagingQueryResponse
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Danh sách sản phẩm</h1>
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <div class="row">
+            <div class="col-md-2 col-sm-12">
+                <a class="btn btn-success" asp-action="Create" asp-controller="Product">Tạo mới</a>
+            </div>
+            <div class="col-md-4 col-sm-12">
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <form action="" method="get">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" name="keyword" value="@ViewData["Keyword"]" placeholder="Nhập thông tin sản phẩm để tìm kiếm..." />
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary">Tìm</button>
+                            <button type="submit" onclick="window.location.href='/product/index'" class="btn btn-dark">Khôi phục</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            @if (ViewData["Result"] != null)
+            {
+                <div id="msgAlert" class="alert alert-primary" role="alert">
+                    @ViewData["Result"]
+                </div>
+            }
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Mã sản phẩm
+                        </th>
+                        <th>
+                            Tên sản phẩm
+                        </th>
+                        <th>
+                            Giá gốc
+                        </th>
+                        <th>
+                            Giá bán
+                        </th>
+                        <th>
+                            Số lượng tồn
+                        </th>
+                        <th>
+                            Tình trạng
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Data)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OriginalPrice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Stock)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Cập nhật", "Update", new { id = item.Id }) |
+                            @Html.ActionLink("Chi tiết", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Xoá", "Delete", new { id = item.Id }) |
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        @await Component.InvokeAsync("Pager", Model)
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        setTimeout(function () {
+            $("#msgAlert").fadeOut('slow');
+        }, 2000);
+    </script>
+}

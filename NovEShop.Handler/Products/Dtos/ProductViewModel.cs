@@ -17,6 +17,7 @@ namespace NovEShop.Handler.Products.Dtos
         public string SeoTitle { get; set; }
         public string SeoAlias { get; set; }
         public string LanguageId { get; set; }
+        public bool IsActive { get; set; }
 
     }
 }

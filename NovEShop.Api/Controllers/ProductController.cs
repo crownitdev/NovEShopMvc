@@ -56,6 +56,7 @@ namespace NovEShop.Api.Controllers
         }
 
         [HttpPost]
+        [Consumes("multipart/form-data")]
         public async Task<IActionResult> Create([FromForm] CreateProductCommand request)
         {
             if (!ModelState.IsValid)
