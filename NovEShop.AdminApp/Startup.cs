@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using NovEShop.AdminApp.Services;
+using NovEShop.AdminApp.Services.Languages;
 using NovEShop.AdminApp.Services.Roles;
 using NovEShop.AdminApp.Services.Users;
 using NovEShop.Handler.Validators;
@@ -50,6 +51,7 @@ namespace NovEShop.AdminApp
             services.AddTransient<IAccountApiClient, AccountApiClient>();
             services.AddTransient<IUserApiClient, UserApiClient>();
             services.AddTransient<IRoleApiClient, RoleApiClient>();
+            services.AddTransient<ILanguageApiClient, LanguageApiClient>();
 
             //services.AddDistributedMemoryCache();
             //services.AddSession(config =>
