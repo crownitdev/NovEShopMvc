@@ -15,8 +15,8 @@ namespace NovEShop.Handler.Products.Queries
     {
         public string TokenAuth { get; set; }
         public string Keyword { get; set; }
-        public string CategoryIds { get; set; }
         public string LanguageId { get; set; }
+        public int? CategoryId { get; set; }
         public GetAllProductsPagingQuery()
             : base(pageSize: 10, pageNumber: 1)
         {
@@ -37,8 +37,10 @@ namespace NovEShop.Handler.Products.Queries
         {
             var query = from p in _dbContext.Products
                         join pt in _dbContext.ProductTranslations on p.Id equals pt.ProductId
+                        join pc in _dbContext.ProductCategories on p.Id equals pc.ProductId
+                        join c in _dbContext.Categories on pc.CategoryId equals c.Id
                         where pt.LanguageId == request.LanguageId
-                        select new { p, pt };
+                        select new { p, pt, pc };
 
             // Filter
             if (!string.IsNullOrEmpty(request.Keyword))
@@ -47,9 +49,9 @@ namespace NovEShop.Handler.Products.Queries
                                     x.pt.Description.Contains(request.Keyword));
             }
 
-            if (!string.IsNullOrEmpty(request.CategoryIds))
+            if (request.CategoryId != null && request.CategoryId != 0)
             {
-                //query = query.Where(x => request.CategoryIds.Contains(x.pc.CategoryId.ToString()));
+                query = query.Where(x => x.pc.CategoryId == request.CategoryId);
             }
 
             var queryResponse = await query

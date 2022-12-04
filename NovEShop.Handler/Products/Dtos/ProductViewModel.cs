@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NovEShop.Handler.Products.Dtos
 {
@@ -18,6 +19,7 @@ namespace NovEShop.Handler.Products.Dtos
         public string SeoAlias { get; set; }
         public string LanguageId { get; set; }
         public bool IsActive { get; set; }
+        public IList<int> CategoryIds { get; set; }
 
     }
 }

@@ -33,7 +33,7 @@ namespace NovEShop.AdminApp.Controllers
             _roleApiClient = roleApiClient;
         }
 
-        public async Task<IActionResult> Index(string keyword, int pageNumber = 1, int pageSize = 1)
+        public async Task<IActionResult> Index(string keyword, int pageNumber = 1, int pageSize = 10)
         {
             var token = HttpContext.Session.GetString("Token");
             var request = new GetAllUsersPagingQuery()

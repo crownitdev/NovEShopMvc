@@ -457,3 +457,4 @@ E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Deb
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\Shared\Components\Navigation\Default.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\Product\Index.cshtml.g.cs
 E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\Product\Create.cshtml.g.cs
+E:\Mine\University\4th\first\DACN 1\eshop-mvc\NovEShop\NovEShop.AdminApp\obj\Debug\net5.0\Razor\Views\Product\AssignToCategory.cshtml.g.cs

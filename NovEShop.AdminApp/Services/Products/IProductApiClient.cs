@@ -8,5 +8,7 @@ namespace NovEShop.AdminApp.Services.Products
     {
         Task<GetAllProductsPagingQueryResponse> GetAllProductsPaging(GetAllProductsPagingQuery request);
         Task<CreateProductCommandResponse> CreateProduct(CreateProductCommand request);
+        Task<GetProductByIdQueryResponse> GetProductById(int id);
+        Task<AssignProductToCategoriesCommandResponse> AssignProductToCategories(AssignProductToCategoriesCommand request);
     }
 }

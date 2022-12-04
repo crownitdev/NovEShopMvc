@@ -45,6 +45,11 @@ namespace NovEShop.Api.Controllers
         public async Task<IActionResult> GetProductById([FromQuery] GetProductByIdQuery request)
         {
             var response = await _broker.Query(request);
+            if (!response.IsSucceed)
+            {
+                return BadRequest(response);
+            }
+
             return Ok(response);
         }
 
@@ -192,6 +197,24 @@ namespace NovEShop.Api.Controllers
                 return BadRequest("Đã có lỗi xảy ra khi xoá hình ảnh");
 
             return Ok(result);
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> AssignToCategories(int id, [FromBody] AssignProductToCategoriesCommand request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var response = await _broker.Command(request);
+
+            if (!response.IsSucceed)
+            {
+                return BadRequest(response);
+            }
+
+            return Ok(response);
         }
     }
 }

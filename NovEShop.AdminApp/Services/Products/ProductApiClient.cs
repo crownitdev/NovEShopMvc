@@ -30,6 +30,24 @@ namespace NovEShop.AdminApp.Services.Products
             _httpClientFactory = httpClientFactory;
         }
 
+        public async Task<AssignProductToCategoriesCommandResponse> AssignProductToCategories(AssignProductToCategoriesCommand request)
+        {
+            var token = _httpContextAccessor.HttpContext.Session.GetString(SystemConstants.AppSettings.Token);
+
+            var json = JsonConvert.SerializeObject(request);
+            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var client = _httpClientFactory.CreateClient();
+            client.BaseAddress = new Uri(ApiUrlConstants.ServeApiUrl);
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var serverResponse = await client.PutAsync($"/api/product/AssignToCategories/{request.Id}/", httpContent);
+
+            var body = await serverResponse.Content.ReadAsStringAsync();
+
+            var responseData = JsonConvert.DeserializeObject<AssignProductToCategoriesCommandResponse>(body);
+            return responseData;
+        }
+
         public async Task<CreateProductCommandResponse> CreateProduct(CreateProductCommand request)
         {
             var token = _httpContextAccessor.HttpContext.Session.GetString(SystemConstants.AppSettings.Token);
@@ -77,7 +95,17 @@ namespace NovEShop.AdminApp.Services.Products
             var response = await GetAsync<GetAllProductsPagingQueryResponse>($"/api/product/GetAll?languageid={request.LanguageId}" +
                 $"&keyword={request.Keyword}" +
                 $"&pageNumber={request.PageNumber}" +
-                $"&pageSize={request.PageSize}");
+                $"&pageSize={request.PageSize}" +
+                $"&categoryId={request.CategoryId}");
+
+            return response;
+        }
+
+        public async Task<GetProductByIdQueryResponse> GetProductById(int id)
+        {
+            var currentLanguageId = _httpContextAccessor.HttpContext.Session.GetString(SystemConstants.AppSettings.DefaultLanguageId);
+            var response = await GetAsync<GetProductByIdQueryResponse>($"/api/product/GetProductById?id={id}" +
+                $"&languageid={currentLanguageId}");
 
             return response;
         }
