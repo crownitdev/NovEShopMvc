@@ -13,8 +13,10 @@ namespace NovEShop.Handler.Products.Queries
 {
     public class GetAllProductsPagingQuery : PaginationFilter, IQuery<GetAllProductsPagingQueryResponse>
     {
-        public string Token { get; set; }
+        public string TokenAuth { get; set; }
         public string Keyword { get; set; }
+        public string CategoryIds { get; set; }
+        public string LanguageId { get; set; }
         public GetAllProductsPagingQuery()
             : base(pageSize: 10, pageNumber: 1)
         {
@@ -33,52 +35,50 @@ namespace NovEShop.Handler.Products.Queries
 
         public async Task<GetAllProductsPagingQueryResponse> Handle(GetAllProductsPagingQuery request, CancellationToken cancellationToken)
         {
-            //var query = from p in _dbContext.Products
-            //            join pt in _dbContext.ProductTranslations on p.Id equals pt.ProductId
-            //            join pc in _dbContext.ProductCategories on p.Id equals pc.ProductId
-            //            join c in _dbContext.Categories on pc.CategoryId equals c.Id
-            //            select new { p, pt, pc };
+            var query = from p in _dbContext.Products
+                        join pt in _dbContext.ProductTranslations on p.Id equals pt.ProductId
+                        where pt.LanguageId == request.LanguageId
+                        select new { p, pt };
 
-            var query = _dbContext.ProductTranslations.AsNoTracking()
-                .Include(pdt => pdt.Product)
-                .ThenInclude(p => p.ProductCategories)
-                .ThenInclude(productCategory => productCategory.Category)
-                .ThenInclude(category => category.CategoryTranslations)
+            // Filter
+            if (!string.IsNullOrEmpty(request.Keyword))
+            {
+                query = query.Where(x => x.pt.Name.Contains(request.Keyword) ||
+                                    x.pt.Description.Contains(request.Keyword));
+            }
+
+            if (!string.IsNullOrEmpty(request.CategoryIds))
+            {
+                //query = query.Where(x => request.CategoryIds.Contains(x.pc.CategoryId.ToString()));
+            }
+
+            var queryResponse = await query
                 .Skip((request.PageNumber - 1) * request.PageSize)
                 .Take(request.PageSize)
-                .Select(x => new ProductMetaViewModel()
-                {
-                    ProductId = x.ProductId,
-                    Name = x.Name,
-                    Price = x.Product.Price.Value
-                });
+                .Select(x => new ProductViewModel
+            {
+                Id = x.p.Id,
+                Name = x.pt.Name,
+                Description = x.pt.Description,
+                Details = x.pt.Details,
+                DateCreated = x.p.CreatedAt,
+                OriginalPrice = x.p.OriginalPrice,
+                Price = x.p.Price.Value,
+                SeoAlias = x.pt.SeoAlias,
+                SeoDescription = x.pt.SeoDescription,
+                SeoTitle = x.pt.SeoTitle,
+                Stock = x.p.Stock,
+                ViewCount = x.p.ViewCount,
+                IsActive = x.p.IsActive
+            })
+                .ToListAsync();
 
-            var products = await query.ToListAsync();
 
-            //var products = await query
-            //    .Skip((request.PageNumber - 1) * request.PageSize)
-            //    .Take(request.PageSize)
-            //    .Select(x => new ProductViewModel()
-            //    {
-            //        Id = x.p.Id,
-            //        Name = x.pt.Name,
-            //        Description = x.pt.Description,
-            //        Details = x.pt.Details,
-            //        Price = x.p.Price,
-            //        OriginalPrice = x.p.OriginalPrice,
-            //        SeoAlias = x.pt.SeoAlias,
-            //        SeoDescription = x.pt.SeoDescription,
-            //        SeoTitle = x.pt.SeoTitle,
-            //        Stock = x.p.Stock,
-            //        ViewCount = x.p.ViewCount,
-            //        DateCreated = x.p.CreatedAt,
-            //        LanguageId = x.pt.LanguageId
-            //    })
-            //    .ToListAsync();
+            //var products = await query.ToListAsync();
 
-            var rowCount = products.Count;
+            var rowCount = queryResponse.Count;
 
-            var response = new GetAllProductsPagingQueryResponse(products, request.PageNumber, request.PageSize)
+            var response = new GetAllProductsPagingQueryResponse(queryResponse, request.PageNumber, request.PageSize)
             {
                 TotalRecords = rowCount,
                 IsSucceed = true,
@@ -90,9 +90,9 @@ namespace NovEShop.Handler.Products.Queries
         }
     }
 
-    public class GetAllProductsPagingQueryResponse : PaginationResponse<ICollection<ProductMetaViewModel>>
+    public class GetAllProductsPagingQueryResponse : PaginationResponse<ICollection<ProductViewModel>>
     {
-        public GetAllProductsPagingQueryResponse(ICollection<ProductMetaViewModel> products, int pageNumber, int pageSize)
+        public GetAllProductsPagingQueryResponse(ICollection<ProductViewModel> products, int pageNumber, int pageSize)
             : base(products, pageNumber, pageSize)
         {
         }

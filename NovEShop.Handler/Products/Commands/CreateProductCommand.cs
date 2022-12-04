@@ -14,12 +14,12 @@ using System.Threading.Tasks;
 
 namespace NovEShop.Handler.Products.Commands
 {
-    public class CreateProductCommand : ProductCreateRequest, ICommand<CreateProductCommandResult>
+    public class CreateProductCommand : ProductCreateRequest, ICommand<CreateProductCommandResponse>
     {
         // Add user id who created the product here
     }
 
-    public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductCommandResult>
+    public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, CreateProductCommandResponse>
     {
         private readonly IFileStorageHelper _fileStorageHelper;
         private readonly NovEShopDbContext _dbContext;
@@ -31,9 +31,9 @@ namespace NovEShop.Handler.Products.Commands
             _dbContext = dbContext;
         }
 
-        public async Task<CreateProductCommandResult> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+        public async Task<CreateProductCommandResponse> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            var response = new CreateProductCommandResult();
+            var response = new CreateProductCommandResponse();
             response.Errors = new List<string>();
 
             // check product is existed
@@ -67,6 +67,8 @@ namespace NovEShop.Handler.Products.Commands
 
             var category = await _dbContext.Categories.FindAsync(request.CategoryId);
 
+            var newProductCategory = _dbContext.CategoryTranslations.Where(x => x.Name == "Sản phẩm mới").FirstOrDefault();
+
             var product = new Product()
             {
                 Price = request.Price,
@@ -86,7 +88,7 @@ namespace NovEShop.Handler.Products.Commands
                         SeoDescription = request.SeoDescription,
                         SeoAlias = request.SeoAlias,
                     }
-                }
+                },
             };
 
             if (category != null)
@@ -118,6 +120,8 @@ namespace NovEShop.Handler.Products.Commands
 
             _dbContext.Products.Add(product);
             await _dbContext.SaveChangesAsync();
+            _dbContext.ProductCategories.Add(new ProductCategories { ProductId = product.Id, CategoryId = newProductCategory.CategoryId });
+            await _dbContext.SaveChangesAsync();
 
             response.ProductId = product.Id;
             response.Message = "Tạo sản phẩm thành công";
@@ -136,7 +140,7 @@ namespace NovEShop.Handler.Products.Commands
         }
     }
 
-    public class CreateProductCommandResult
+    public class CreateProductCommandResponse
     {
         public int? ProductId { get; set; }
         public string Message { get; set; }
