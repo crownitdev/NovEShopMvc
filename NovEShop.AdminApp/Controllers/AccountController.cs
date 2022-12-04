@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using NovEShop.AdminApp.Services;
 using NovEShop.Handler.Accounts.Commands;
 using NovEShop.Handler.Accounts.Dtos;
+using NovEShop.Share.Constants;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -71,7 +72,8 @@ namespace NovEShop.AdminApp.Controllers
                     IsPersistent = true
                 };
 
-                HttpContext.Session.SetString("Token", response);
+                HttpContext.Session.SetString(SystemConstants.AppSettings.DefaultLanguageId, _configuration["DefaultLanguageId"]);
+                HttpContext.Session.SetString(SystemConstants.AppSettings.Token, response);
 
                 await HttpContext.SignInAsync(
                     CookieAuthenticationDefaults.AuthenticationScheme,
