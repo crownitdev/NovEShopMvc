@@ -1,4 +1,6 @@
+using FluentValidation;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using NovEShop.Data;
 using NovEShop.Data.Models.Commons;
 using NovEShop.Handler.Infrastructure;
+using NovEShop.Handler.Validators;
 using NovEShop.Share.Helpers;
 using System;
 using System.Collections.Generic;
@@ -38,35 +41,34 @@ namespace NovEShop
             });
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, authConfig =>
+                {
+                    authConfig.LoginPath = "/Accounts/Login";
+                    authConfig.Cookie.Name = "Cookie";
+                    authConfig.SlidingExpiration = true;
+                    authConfig.ExpireTimeSpan = TimeSpan.FromDays(1);
+                });
+
+
+            services.AddSession(config =>
             {
-                options.SignIn.RequireConfirmedAccount = true;
-                options.Password.RequireDigit = true;
-                options.Password.RequireUppercase = true;
-                options.Password.RequiredLength = 6;
+                config.IdleTimeout = TimeSpan.FromDays(1);
+            });
 
-                options.User.RequireUniqueEmail = true;
-            })
-                .AddEntityFrameworkStores<NovEShopDbContext>()
-                .AddDefaultTokenProviders();
-
-            //services.AddAuthentication()
-            //    .AddCookie("Cookie", authConfig =>
-            //    {
-            //        authConfig.LoginPath = "/Accounts/Login";
-            //        authConfig.Cookie.Name = "Cookie";
-            //        authConfig.SlidingExpiration = true;
-            //        authConfig.ExpireTimeSpan = TimeSpan.FromMinutes(30d);
-            //    });
-
-            services.AddTransient<IFileStorageHelper, FileStorageHelper>();
-            services.AddMediatR(typeof(IBroker).Assembly);
+            services.AddValidatorsFromAssembly(typeof(LoginRequestDtoValidator).Assembly);
 
             services.AddSingleton<IEmailSender, EmailSender>();
-            services.AddTransient<IBroker, Broker>();
 
-            services.AddControllersWithViews();
-            services.AddRazorPages().AddRazorRuntimeCompilation();
+            IMvcBuilder builder = services.AddControllersWithViews();
+            var environment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+#if DEBUG
+            if (environment == Environments.Development)
+            {
+                builder.AddRazorRuntimeCompilation();
+            }
+#endif
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

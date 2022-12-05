@@ -40,6 +40,7 @@ namespace NovEShop.AdminApp
                 {
                     options.LoginPath = "/Account/Login";
                     options.AccessDeniedPath = "/Account/Forbidden";
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
                 });
 
             services.AddSession(options =>

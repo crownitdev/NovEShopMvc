@@ -37,10 +37,14 @@ namespace NovEShop.Handler.Products.Queries
         {
             var query = from p in _dbContext.Products
                         join pt in _dbContext.ProductTranslations on p.Id equals pt.ProductId
-                        join pc in _dbContext.ProductCategories on p.Id equals pc.ProductId
-                        join c in _dbContext.Categories on pc.CategoryId equals c.Id
+                        join pc in _dbContext.ProductCategories on p.Id equals pc.ProductId into ppc
+                        from pc in ppc.DefaultIfEmpty()
+                        join c in _dbContext.Categories on pc.CategoryId equals c.Id into pcc
+                        from c in pcc.DefaultIfEmpty() 
                         where pt.LanguageId == request.LanguageId
-                        select new { p, pt, pc };
+                        select new { p, pt, pc, c };
+
+
 
             // Filter
             if (!string.IsNullOrEmpty(request.Keyword))
